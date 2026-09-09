@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <style>
+      /* fieldset 범위 설정 */
+      fieldset {
+        width: 350px;
+        padding: 15px;
+      }
+
+      legend {
+        font-weight: bold;
+      }
+
+      /* ul 기본 여백 및 기호(점) 제거 */
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      /* li 사이의 아래 여백 설정 */
+      li {
+        margin-bottom: 12px;
+      }
+
+      /* 마지막 버튼 행은 아래 여백 제거 */
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      label {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 조건 ②: <form> ~ <fieldset> 태그 이용 -->
+    <form action="#" method="post">
+      <fieldset>
+        <!-- 그룹의 제목 지정 -->
+        <legend>도서 신청</legend>
+
+        <ul>
+          <li>
+            <label for="username">이름:</label>
+            <input type="text" id="username" name="username" />
+          </li>
+          <li>
+            <label for="email">이메일:</label>
+            <input type="email" id="email" name="email" />
+          </li>
+          <li>
+            <label for="booktitle">신청 도서명:</label>
+            <input type="text" id="booktitle" name="booktitle" />
+          </li>
+          <li>
+            <button type="submit">신청하기</button>
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+  </body>
+</html>

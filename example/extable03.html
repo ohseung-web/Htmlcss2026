@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>표</title>
+    <style>
+      table {
+        width: 800px;
+        border-collapse: collapse;
+        text-align: center;
+      }
+
+      caption {
+        text-align: right;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      /* 테두리 색상 #555 적용 */
+      th,
+      td {
+        border: 1px solid #555;
+        padding: 8px 10px;
+      }
+
+      /* 표의 머리말 배경색 green 지정 및 글자 스타일 */
+      thead th {
+        background-color: green;
+        color: white;
+        font-weight: bold;
+      }
+      /* 1열과 2열 셀(td)에 배경색 #e4ecd0 및 글자 굵게 지정 */
+      tbody td:nth-child(1),
+      tbody td:nth-child(2) {
+        background-color: #e4ecd0;
+        font-weight: bold;
+      }
+
+      /* 1열, 2열 항목 글자 강조 */
+      /* tbody td:nth-child(1),
+      tbody td:nth-child(2) {
+        font-weight: bold;
+      } */
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        (본사 정식 소비자 가격)
+      </caption>
+
+      <!-- 4번 조건: <colgroup>을 이용해 1열, 2열 배경색(#e4ecd0) 지정 -->
+      <!-- <colgroup>
+        <col class="bg-col" />
+        <col class="bg-col" />
+        <col />
+        <col />
+        <col />
+      </colgroup> -->
+
+      <thead>
+        <tr>
+          <th colspan="2">제품명</th>
+          <th>★★★★★★★<br />바텍스</th>
+          <th>★★★★★<br />래티튜드</th>
+          <th>★★★★<br />아티젠IB</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td rowspan="2">국내차량</td>
+          <td>썬루프</td>
+          <td>150,000</td>
+          <td>90,000</td>
+          <td>170,000</td>
+        </tr>
+        <tr>
+          <td>파노라마 썬루프</td>
+          <td>330,000</td>
+          <td>200,000</td>
+          <td>170,000</td>
+        </tr>
+        <tr>
+          <td rowspan="2">수입차량</td>
+          <td>썬루프</td>
+          <td>180,000</td>
+          <td>110,000</td>
+          <td>90,000</td>
+        </tr>
+        <tr>
+          <td>파노라마 썬루프</td>
+          <td>350,000</td>
+          <td>240,000</td>
+          <td>200,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

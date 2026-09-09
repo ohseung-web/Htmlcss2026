@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>표연습문제</title>
+    <style>
+      table {
+        width: 500px;
+        border-collapse: collapse;
+        text-align: center;
+      }
+
+      /* 테이블 맨 위와 맨 아래에 진한/일반 가로선 적용 */
+      table {
+        border-top: 2px solid #000;
+        border-bottom: 1px solid #000;
+      }
+
+      /* 모든 헤더와 셀의 기본 세로 테두리를 지우고 아래쪽 가로선만 지정 */
+      th,
+      td {
+        padding: 10px;
+        /* border-left: none;
+      border-right: none;
+      border-top: none; */
+        border-bottom: 1px solid #888;
+      }
+
+      /* 제목 행(th) 아래쪽선 구분 강조 */
+      th {
+        font-weight: bold;
+        border-bottom: 1px solid #000;
+      }
+
+      /* 마지막 행의 border-bottom 중복 제거 */
+      /* tbody tr:last-child td {
+      border-bottom: none;
+    } */
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Lorem</th>
+          <th>Ipsum</th>
+          <th>Dolor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Lorem</td>
+          <td>Ipsum</td>
+          <td>Dolor</td>
+        </tr>
+        <tr>
+          <td>Lorem</td>
+          <td>Ipsum</td>
+          <td>Dolor</td>
+        </tr>
+        <tr>
+          <td>Lorem</td>
+          <td>Ipsum</td>
+          <td>Dolor</td>
+        </tr>
+        <tr>
+          <td>Lorem</td>
+          <td>Ipsum</td>
+          <td>Dolor</td>
+        </tr>
+        <tr>
+          <td>Lorem</td>
+          <td>Ipsum</td>
+          <td>Dolor</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

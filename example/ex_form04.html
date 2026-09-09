@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <style>
+      /* 전체 기본 스타일 */
+      body {
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+
+      /* ul 기본 여백 및 기호(점) 제거 */
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      /* 행 간격 설정 */
+      li {
+        margin-bottom: 8px;
+      }
+
+      /* 라벨 굵기 설정 */
+      label {
+        font-weight: bold;
+      }
+
+      /* 날짜/시간 입력 관련 내부 label 스타일 */
+      .time-group label {
+        font-weight: normal;
+        display: inline-block;
+        width: 45px;
+      }
+
+      /* textarea 스타일 */
+      textarea {
+        width: 300px;
+        height: 80px;
+        margin-top: 5px;
+      }
+
+      /* 버튼 여백 지정 */
+      input[type='submit'],
+      input[type='reset'] {
+        padding: 3px 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>예약 및 만족도 조사 폼</h2>
+
+    <!-- 조건 ①: HTML 온라인 서식 작성 -->
+    <form action="#" method="post">
+      <!-- 1. 예약 날짜/시간 입력 섹션 -->
+      <h4>예약 날짜/시간 입력</h4>
+      <ul>
+        <li class="time-group">
+          <label for="month-input">month:</label>
+          <input
+            type="month"
+            id="month-input"
+            name="reservation_month"
+            value="2025-08"
+          />
+        </li>
+        <li class="time-group">
+          <label for="week-input">week:</label>
+          <input
+            type="week"
+            id="week-input"
+            name="reservation_week"
+            value="2025-W35"
+          />
+        </li>
+        <li class="time-group">
+          <label for="date-input">date:</label>
+          <input
+            type="date"
+            id="date-input"
+            name="reservation_date"
+            value="2025-08-31"
+          />
+        </li>
+        <li class="time-group">
+          <label for="time-input">time:</label>
+          <input
+            type="time"
+            id="time-input"
+            name="reservation_time"
+            value="15:30"
+          />
+        </li>
+        <li class="time-group">
+          <label for="local-input">local:</label>
+          <input
+            type="datetime-local"
+            id="local-input"
+            name="reservation_local"
+            value="2025-08-31T15:30:10"
+          />
+        </li>
+      </ul>
+
+      <!-- 2. 인원 수 입력 섹션 -->
+      <h4>인원 수 입력</h4>
+      <ul>
+        <li>
+          <label for="people">예약 인원:</label>
+          <input
+            type="number"
+            id="people"
+            name="people"
+            value="2"
+            min="1"
+            max="10"
+          />
+        </li>
+      </ul>
+
+      <!-- 3. 만족도 평가 섹션 -->
+      <h4>만족도 평가</h4>
+      <ul>
+        <li>
+          <label for="satisfaction">만족도:</label>
+          <input
+            type="range"
+            id="satisfaction"
+            name="satisfaction"
+            min="0"
+            max="100"
+          />
+        </li>
+      </ul>
+
+      <!-- 4. 추가 옵션 섹션 -->
+      <h4>추가 옵션</h4>
+      <ul>
+        <li>
+          <label>선호하는 서비스 유형:</label>
+          <label
+            ><input type="checkbox" name="service" value="빠른 응답" /> 빠른
+            응답</label
+          >
+          <label
+            ><input type="checkbox" name="service" value="친절한 서비스" />
+            친절한 서비스</label
+          >
+          <label
+            ><input type="checkbox" name="service" value="저렴한 가격" /> 저렴한
+            가격</label
+          >
+        </li>
+        <li>
+          <label>방문 목적:</label>
+          <label><input type="radio" name="purpose" value="업무" /> 업무</label>
+          <label><input type="radio" name="purpose" value="여가" /> 여가</label>
+          <label><input type="radio" name="purpose" value="기타" /> 기타</label>
+        </li>
+      </ul>
+
+      <!-- 5. 의견 작성 섹션 -->
+      <h4>의견 작성</h4>
+      <ul>
+        <li>
+          <textarea name="opinion" placeholder="의견을 입력하세요"></textarea>
+        </li>
+        <li>
+          <input type="submit" value="제출" />
+          <input type="reset" value="리셋" />
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login_Form</title>
+  </head>
+  <body>
+    <h3>로그인 폼</h3>
+    <hr />
+    <form name="fo" method="get">
+      사용자 ID : <input type="text" size="15" value="" /><br />
+      비밀 번호 : <input type="password" size="15" value="" />
+      <input type="submit" value="완료" />
+    </form>
+    <hr />
+    <form>
+      <label for="">아이디</label>:<input type="“text”" /><br />
+      <label for="">비밀번호</label>:<input type="“password”" /><br />
+      <label for="">이메일</label>:<input type="“email”" />
+    </form>
+    <hr/>
+
+    <form>
+    <fieldset>
+        <legend>로그인 정보</legend>
+        <label for="">아이디</abel>:<input type=“text”><br>
+        <label for="">비밀번호</abel>:<input type=“password”>
+    </fieldset>
+    <fieldset>
+        <legend>회원 정보</legend>
+        <label for="">취미/특기</abel>:<input type=“text”>
+    </fieldset>
+   </form>
+   <hr/>
+
+   <form>
+      <input type="checkbox" checked value="1">게임하기
+      <input type="checkbox" value="2" >영화관람
+      <input type="checkbox" value="3">음악감상
+  </form>
+  <hr/>
+
+  <form>
+    <input type="radio" checked>초등학교
+    <input type="radio" >중학교
+    <input type="radio">고등학교
+  </form>
+  <hr/>
+
+  <form>
+    <label for="">남기실 말씀</label><br>
+    <textarea cols="40" rows="5"></textarea>
+  </form>
+  <hr/>
+
+  <form>
+    <select>
+      <option value="" disabled >Family Site</option>
+      <option value="건축사무소" selected>건축사무소 </option>
+      <option value="시공사무소">시공사무소 </option>
+      <option value="설계사무소">설계사무소 </option>
+    </select>
+  </form>
+  <hr/>
+
+  <form>
+    <label for="">검색</label> : <input type="text" size="10" value="">
+    <input type="button" value="Q1">
+    <button type="button">Q2</button><br>
+    <label for="">Summit 버튼</label> : <input type="submit" value="전송1">
+    <button type="submit">전송2</button><br>
+    <label for="">reset 버튼</label> : <input type="reset" value="리셋1">
+    <button type="reset">리셋2</button>
+  </form>
+  <hr/>
+
+  <h3>회원 정보를 입력해주세요.</h3>
+  <hr>
+  <form>
+    email : <input type="email" placeholder="id@host"><br>
+    홈페이지 : <input type="url" placeholder="https://"><br>
+    전화번호 : <input type="tel" placeholder="010-1234-5678">
+    <input type="submit" value="가입"><br><br>
+    <hr>
+    검색어 : <input type="search" placeholder="검색어">
+    <input type="button" value="검색">
+  </form>
+
+  <hr/>
+  <h3>시간 정보 입력 HTML5 폼 요소들</h3>
+      초기 세팅 : 2025년 8월 31일 오후 3시 30분(10초 32)<br>
+<hr>
+
+<form>
+  <pre>
+    month : <input type="month" value="2023-06"><br> 
+    week :  <input type="week" value="2023-W22"><br>
+    data : <input type="date" value="2023-06-01"><br> 
+    time : <input type="time" value="15:30"><br>
+    local: <input type="datetime-local"  value="2023-06-13T15:30:10.32"><br>
+  </pre>
+</form>
+
+<hr />
+<input type="number" min="0.0" max="10.0" step= "0.5">
+
+<input type="range" min="0" max="100" list="temperatures">
+<datalist id="temperatures">
+	<option value="10" label="Low">
+	<option value="50" label="Medium">
+	<option value="90" label="High">
+</datalist>
+
+  </body>
+</html>
