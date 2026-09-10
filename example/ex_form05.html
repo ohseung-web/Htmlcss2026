@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* =========================================================
+         1. 기본 스타일 초기화 (Reset Style)
+         ========================================================= */
+      * {
+        /* 테두리(border)와 패딩(padding)을 요소의 전체 너비/높이에 포함시킵니다.
+           계산이 편리해지며 레이아웃 흐트러짐을 방지합니다. */
+        box-sizing: border-box;
+        /* 모든 요소의 기본 여백(margin, padding)을 제거합니다. */
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        /* 기본 폰트 패밀리 지정 (Arial, sans-serif) */
+        font-family: Arial, sans-serif;
+        /* 전체 배경색을 연한 회색으로 설정 */
+        background-color: #f2f2f2;
+        /* 본문 전체에 20px 안쪽 여백 설정 */
+        padding: 20px;
+      }
+
+      /* =========================================================
+         2. 제목 스타일 (Heading Style)
+         ========================================================= */
+      h3 {
+        /* 제목 텍스트를 가운데 정렬 */
+        text-align: center;
+        /* 글자 색상을 어두운 회색(#333)으로 설정 */
+        color: #333;
+        /* 제목 아래쪽에 20px 외부 여백을 주어 폼과의 간격 확보 */
+        margin-bottom: 20px;
+      }
+
+      /* =========================================================
+         3. 폼 카드 영역 스타일 (Form Outer Style)
+         ========================================================= */
+      form {
+        /* 폼 영역의 배경색을 흰색으로 지정 */
+        background-color: #fff;
+        /* 폼 내부 요소와의 여백을 20px 지정 */
+        padding: 20px;
+        /* 폼의 너비를 550px로 고정 */
+        width: 550px;
+        /* 상하 여백 0, 좌우 여백 auto로 설정하여 화면 중앙에 배치 */
+        margin: 0 auto;
+        /* 모서리를 10px만큼 둥글게 처리 */
+        border-radius: 10px;
+        /* 폼 주변에 옅은 그림자 효과 적용 (X축 0, Y축 4px, 번짐 10px, 검은색 투명도 10%) */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* =========================================================
+         4. 그룹 상자 스타일 (Fieldset & Legend Style)
+         ========================================================= */
+      fieldset {
+        /* 테두리 1px 실선, 밝은 회색(#ccc) 처리 */
+        border: 1px solid #ccc;
+        /* fieldset의 모서리를 8px 둥글게 지정 */
+        border-radius: 8px;
+        /* 내부 여백: 위아래 15px, 좌우 20px */
+        padding: 15px 20px;
+        /* 아래쪽 fieldset과의 간격을 20px 확보 */
+        margin-bottom: 20px;
+      }
+
+      legend {
+        /* 그룹 제목 글자 굵기를 두껍게(bold) 설정 */
+        font-weight: bold;
+        /* fieldset 테두리와 겹치지 않도록 좌우에 10px 여백 지정 */
+        padding: 0 10px;
+      }
+
+      /* =========================================================
+         5. 리스트 항목 스타일 (List Style)
+         ========================================================= */
+      ul {
+        /* ul 태그의 기본 불릿 기호(점) 제거 */
+        list-style: none;
+        /* ul 기본 안쪽 여백 제거 */
+        padding: 0;
+      }
+
+      li {
+        /* 각 입력항목(li) 간의 세로 간격을 15px로 설정 */
+        margin-bottom: 15px;
+      }
+
+      /* =========================================================
+         6. 레이블 및 입력폼 개별 스타일
+         ========================================================= */
+      /* 항목 타이틀(이름, 이메일, 비밀번호 등) 공통 레이블 */
+      .title {
+        /* inline 요소에 너비를 줄 수 있도록 inline-block으로 변경 */
+        display: inline-block;
+        /* 라벨 너비를 80px로 고정하여 오른쪽에 오는 입력창들의 시작 위치를 맞춤 */
+        width: 80px;
+        /* 라벨 글자를 두껍게 처리 */
+        font-weight: bold;
+      }
+
+      /* 성별 및 관심사 항목 내 label 스타일 */
+      .gender_item label,
+      .hobby_item label {
+        /* 라디오버튼/체크박스 텍스트 오른쪽으로 10px 간격 지정 */
+        margin-right: 10px;
+      }
+
+      /* 교육과정 내 읽기 전용 텍스트 상자 예외 스타일 */
+      li.level input[type='text'] {
+        /* 인라인 블록 요소로 배치 */
+        display: inline-block;
+        /* 너비를 280px로 제한하여 옆의 (초급레벨) 텍스트와 한 줄로 배치 */
+        width: 280px;
+      }
+
+      /* 기본 입력창 (텍스트, 이메일, 비밀번호) 및 셀렉트 박스 공통 스타일 */
+      input[type='text'],
+      input[type='email'],
+      input[type='password'],
+      select {
+        /* 입력창 너비를 350px로 설정 */
+        width: 350px;
+        /* 입력창 내부 안쪽 여백 지정 (위아래 6px, 좌우 8px) */
+        padding: 6px 8px;
+        /* 테두리 1px 실선 회색 지정 */
+        border: 1px solid #ccc;
+        /* 입력창 모서리를 5px 둥글게 지정 */
+        border-radius: 5px;
+        /* 패딩 및 테두리가 width(350px) 안에 포함되도록 설정 */
+        box-sizing: border-box;
+      }
+
+      /* 라디오 버튼 및 체크박스 스타일 */
+      input[type='radio'],
+      input[type='checkbox'] {
+        /* 라디오/체크박스 아이콘과 글자 사이 간격 5px 조절 */
+        margin-right: 5px;
+      }
+
+      /* =========================================================
+         7. 버튼 영역 및 이벤트 스타일 (Button Style)
+         ========================================================= */
+      /* 버튼 감싸는 div 영역 */
+      .btn {
+        /* 하단 버튼들을 중앙으로 정렬 */
+        text-align: center;
+      }
+
+      /* 수강신청(submit) 및 다시쓰기(reset) 버튼 공통 스타일 */
+      .btn button[type='submit'],
+      .btn button[type='reset'] {
+        /* 버튼 안쪽 여백 지정 (위아래 10px, 좌우 20px) */
+        padding: 10px 20px;
+        /* 기본 버튼 테두리 제거 */
+        border: none;
+        /* 버튼 모서리를 5px 둥글게 지정 */
+        border-radius: 5px;
+        /* 버튼 글자 크기 16px 설정 */
+        font-size: 16px;
+        /* 마우스를 올렸을 때 손가락 모양(포인터) 커서로 변경 */
+        cursor: pointer;
+      }
+
+      /* [수강신청] 제출 버튼 기본 스타일 */
+      .btn button[type='submit'] {
+        /* 버튼 배경색을 초록색으로 설정 */
+        background-color: #4caf50;
+        /* 버튼 글자 색상을 흰색으로 설정 */
+        color: white;
+      }
+
+      /* [수강신청] 제출 버튼 마우스 호버(Hover) 효과 */
+      .btn button[type='submit']:hover {
+        /* 마우스를 올리면 조금 더 어두운 초록색으로 변경 */
+        background-color: #45a049;
+      }
+
+      /* [다시쓰기] 초기화 버튼 기본 스타일 */
+      .btn button[type='reset'] {
+        /* 버튼 배경색을 빨간색으로 설정 */
+        background-color: #f44336;
+        /* 버튼 글자 색상을 흰색으로 설정 */
+        color: white;
+        /* 왼쪽 제출 버튼과의 간격 10px 띄움 */
+        margin-left: 10px;
+      }
+
+      /* [다시쓰기] 초기화 버튼 마우스 호버(Hover) 효과 */
+      .btn button[type='reset']:hover {
+        /* 마우스를 올리면 조금 더 어두운 빨간색으로 변경 */
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>여름방학 특강 신청하기</h3>
+    <form action="#" method="get">
+      <fieldset>
+        <legend>교육과정</legend>
+        <ul>
+          <li class="level">
+            <label class="title">영어회화</label>
+            <input type="text" value="오전 9:00~11:00" readonly />
+            <span>(초급레벨)</span>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>신청자 기본 정보</legend>
+        <ul>
+          <li>
+            <label class="title">이름</label>
+            <input type="text" placeholder="이름 입력" />
+          </li>
+          <li>
+            <label class="title">이메일</label>
+            <input type="email" placeholder="이메일 입력" />
+          </li>
+          <li>
+            <label class="title">비밀번호</label>
+            <input type="password" placeholder="비밀번호 입력" />
+          </li>
+          <li>
+            <label class="title">학과</label>
+            <select>
+              <option value="">학과를 선택하세요</option>
+              <option value="컴퓨터공학과">컴퓨터공학과</option>
+              <option value="국어국문학과">국어국문학과</option>
+              <option value="영어영문학과">영어영문학과</option>
+              <option value="전자융합과">전장융합과</option>
+            </select>
+          </li>
+          <li class="gender_item">
+            <span class="title">성별</span>
+            <input type="radio" name="gender" checked id="man" />
+            <label for="man">남자</label>
+            <input type="radio" name="gender" id="woman" />
+            <label for="woman">여자</label>
+          </li>
+          <li class="hobby_item">
+            <span class="title">관심사</span>
+            <input type="checkbox" name="hobby" id="ho1" />
+            <label for="ho1">여행</label>
+            <input type="checkbox" name="hobby" id="ho2" />
+            <label for="ho2">게임</label>
+            <input type="checkbox" name="hobby" id="ho3" />
+            <label for="ho3">공연</label>
+            <input type="checkbox" name="hobby" id="ho4" />
+            <label for="ho4">운동</label>
+            <input type="checkbox" name="hobby" id="ho5" />
+            <label for="ho5">기타</label>
+          </li>
+        </ul>
+      </fieldset>
+      <!-- 의미없는 태그 <div>이용 : 그룹을 묶을때 사용하면 유용함 -->
+      <div class="btn">
+        <button type="submit">수강신청</button>
+        <button type="reset">다시쓰기</button>
+      </div>
+    </form>
+  </body>
+</html>
