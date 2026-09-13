@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styleCSS/Exkurly.css">
+    <title>마켓컬리 회원가입</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <p class="essential"><span class="red">*</span> 필수입력사항</p>
+    <form action="">
+        <fieldset>
+            <ul>
+                <li>
+                    <label for="user_id">아이디<span class="red">*</span></label>
+                    <input type="text" class="w305"  id="user_id" placeholder="아이디를 입력해주세요">
+                </li>
+                <li>
+                    <label for="user_pw">비밀번호<span class="red">*</span></label>
+                    <input type="password" class="w305" id="user_pw" placeholder="비밀번호를 입력해주세요">
+                </li>
+                <li>
+                    <label for="user_pwchk">비밀번호확인<span class="red">*</span></label>
+                    <input type="password" class="w305" id="user_pwchk" placeholder="비밀번호를 한번 더 입력해주세요">
+                </li>
+                <li>
+                    <label for="user_name">이름<span class="red">*</span></label>
+                    <input type="text" class="w305" id="user_name" placeholder="이름을 입력해주세요">
+                </li>
+                <li>
+                    <span>이메일<span class="red">*</span></span>
+                    <div class="email_wrap w305">
+                        <input type="text" id="user_email" placeholder="예:marketkurly">
+                        <span>@</span>
+                        <select>
+                            <option value="" selected>선택하기</option>
+                            <option value="naver.com">naver.com</option>
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="hanmail.com">hanmail.net</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <label for="user_phone">휴대폰<span class="red">*</span></label>
+                    <input type="number" class="w305" id="user_phone" placeholder="숫자만 입력해주세요">
+                    <button type="button" class="phone_btn">인증번호 받기</button>
+                </li>
+                <li>
+                    <span>주소<span class="red">*</span></span>
+                    <button type="button" class="w305 search">주소검색</button>
+                </li>
+                <li>
+                    <span>성별</span>
+                    <div class="w305 gender_wrap">
+                        <label>
+                            <input type="radio" name="gender" value="남자"><span> 남자</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="여자"><span> 여자</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="선택안함" checked><span> 선택안함</span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <label for="birth">생년월일</label>
+                    <input type="date" id="birth" value="2025-01-01" class="w305">
+                </li>
+                <li>
+                    <span>추가입력 사항</span>
+                    <input type="radio" value="친구초대 추천인 아이디" id="invite_id">
+                    <label for="invite_id" class="add_label">친구초대 추천인 아이디</label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset class="fd2">
+            <ul>
+                <li>
+                    <span>이용약관동의<span class="red">*</span></span>
+                    <div class="agree_wrap">
+                        <div>
+                            <input type="checkbox" id="agree_all">
+                            <label for="agree_all" class="all_txt">전체 동의합니다.</label>
+                            <p>선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="agree_use">
+                            <label for="agree_use">이용약관 동의 <span class="gray">(필수)</span></label>
+                            <a href="#">약관보기 ></a>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="agree_personal">
+                            <label for="agree_personal">개인정보 수집∙이용 동의 <span class="gray">(필수)</span></label>
+                            <a href="#">약관보기 ></a>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="agree_marketing">
+                            <label for="agree_marketing">마케팅 광고 활용을 위한 수집 및 이용 동의 <span class="gray">(선택)</span></label>
+                            <a href="#">약관보기 ></a>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="agree_free">
+                            <label for="agree_free">무료배송, 할인쿠폰 등 혜택/정보 수신 동의 <span class="gray">(선택)</span></label>
+                        </div>
+                        <div class="free">
+                            <input type="checkbox" id="sms">
+                            <label for="sms">SMS</span></label>
+                            <input type="checkbox" id="email">
+                            <label for="email">이메일</span></label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="agree_fourteen">
+                            <label for="agree_fourteen">본인은 만 14세 이상입니다. <span class="gray">(필수)</span></label>
+                        </div>
+                    </div>                    
+                </li>
+            </ul>
+        </fieldset>
+        <div class="btn_wrap">
+            <button type="submit">가입하기</button>
+        </div>
+    </form>
+</body>
+</html>

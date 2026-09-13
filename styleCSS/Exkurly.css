@@ -1,0 +1,229 @@
+@charset "utf-8";
+
+/* 공통css  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 640px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+h1{
+    font-size: 28px;
+    font-weight: 500;
+    margin: 50px 0;
+    text-align: center;
+}
+ul,li{
+    list-style: none;
+}
+li{
+    padding: 10px 20px;
+}
+fieldset{
+    border: 0;
+}
+.red{
+    color:rgb(238, 106, 123);
+}
+.gray{
+    color: #6b6b6b;
+}
+/* 공통css 끝 */
+
+/* input type=number spin제거  */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* input 포인트 모양변경 */
+input[type="radio"],
+input[type="radio"]:checked,
+input[type="checkbox"],
+input[type="checkbox"]:checked{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    accent-color: rgb(95, 0, 128);
+    vertical-align: middle;
+}
+
+/* 필수입력사항 문구  */
+.essential{
+    padding-bottom: 10px;
+    font-size: 12px;
+    text-align: right;
+    border-bottom: 2px solid #000;
+}
+
+/* 좌측 제목  */
+form ul li>label:first-child,
+form ul li>span:first-child{
+    display: inline-block;
+    font-size: 14px;   
+    font-weight: 500;
+    width: 139px;
+    vertical-align: middle;
+}
+
+/* 우측 전체 사이즈  */
+form ul li .w305{
+    width: 305px;
+    height: 46px;
+    padding: 0 11px 0 15px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 6px;
+}
+
+/* 우측 input 전체  */
+form ul li input.w305{   
+    font-size: 16px;    
+    line-height: 1.5;
+}
+
+/* 우측 컨텐츠 감싼 div 전체  */
+form ul li div.w305{
+    display: inline-block;
+}
+
+/* 이메일 입력부분  */
+form ul li .email_wrap #user_email,
+form ul li .email_wrap select{
+    border: 0;
+    height: 97%;
+    font-size: 16px;
+}
+form ul li .email_wrap #user_email{
+    width: 148px;
+}
+form ul li .email_wrap span{
+    font-size: 13px;
+}
+form ul li .email_wrap select{
+    display: inline-block;
+    color: #6b6b6b;
+}
+
+/* 버튼 전체  */
+form ul li button{    
+    height: 46px;
+    border: 1px solid rgb(95, 0, 128);
+    border-radius: 6px;
+    background-color: #fff;
+    color: rgb(95, 0, 128);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* 휴대폰 인증번호 버튼  */
+form ul li .phone_btn{
+    width: 120px;
+}
+
+/* 주소검색버튼  */
+form ul li .search{
+    border: 1px solid rgb(95, 0, 128);
+}
+
+/* 성별 wrap */
+form ul li .gender_wrap{
+    border: 0;
+    padding: 0;
+}
+
+/* 성별 label */
+form ul li .gender_wrap label{
+    line-height: 46px;
+    margin-right: 44px;
+}
+form ul li .gender_wrap label:last-child{
+    margin-right: 0;
+}
+form ul li .gender_wrap label span,
+form ul li .add_label{
+    font-size: 14px;
+    padding-left: 6px;
+    color: #6b6b6b;
+}
+
+/* 두번째 fieldset 적용 */
+form .fd2{
+    border-top: 1px solid #000;
+    padding: 10px 0px;
+    margin-top: 30px;
+}
+
+/* 이용약관동의 제목 적용 */
+form .fd2 ul li>span:first-child{
+    vertical-align: top;
+}
+
+/* 이용약관동의 내용 적용 */
+form .fd2 li .agree_wrap{
+    display: inline-block;
+    width: 450px;
+    font-size: 13px;
+}
+
+/* 전체동의합니다 큰 글씨 */
+form .fd2 li .agree_wrap .all_txt{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+form .fd2 li .agree_wrap p{
+    padding-left: 37px;
+    font-size: 12px;
+    letter-spacing: -1px;
+}
+
+form .fd2 li .agree_wrap div{
+    padding-bottom: 15px;
+}
+
+form .fd2 li .agree_wrap div label{
+    padding-left: 7px;
+}
+
+/* 약관보기 버튼 */
+form .fd2 li .agree_wrap div a{
+    float: right;
+    color: rgb(95, 0, 128);
+    text-decoration: none;
+}
+
+form .fd2 li .agree_wrap .free{
+    padding-left: 37px;
+}
+form .fd2 li .agree_wrap .free #email{
+    margin-left: 60px;
+}
+
+/* 버튼 wrap */
+form .btn_wrap{
+    padding: 40px 0;
+    border-top: 1px solid rgb(197 197 197);
+    text-align: center;
+}
+
+/* 버튼 적용 */
+form .btn_wrap button{
+    padding: 15px 90px;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(95, 0, 128);
+    border: 0;
+    font-size: 16px;
+    cursor: pointer;   
+}
+
+
