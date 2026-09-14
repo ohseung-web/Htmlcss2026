@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+/* html에 기준을 설정해야 1rem이 14px이 됩니다 */
+html {
+  font-size: 14px;
+}
+
+/* [슬라이드 1] 기본 폰트 사이즈 및 단위 기준 설정 */
+body {
+  /* 기본 브라우저 폰트 크기는 16px (100% / 1rem 기준) */
+  font-size: 16px;
+  /* font-size: 1rem; 14px */
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* [슬라이드 2] 메인 제목: font-size, font-weight 적용 */
+h1 {
+  /* 16px * 1.5 = 24px 과 동일 (상대 단위 rem 활용) */
+  font-size: 1.5rem;
+  /* em을 사용하면 body의 폰트사이즈 14 * 1.5 = 21이된다. */
+  /* font-size: 1.5em; */
+  font-weight: 700; /* bold */
+  color: #111;
+}
+
+/* [슬라이드 2] 본문 단락 (.text): line-height, font-size, font-style */
+p.text {
+  /* 고정 단위 px 활용 및 줄간격(line-height) 설정으로 읽기 쉬운 행간 구현 */
+  font-size: 14px;
+  line-height: 1.6; /* 글자 크기의 1.6배 행간 (약 22.4px) */
+  font-style: normal;
+  margin-bottom: 20px;
+}
+
+/* [슬라이드 2] 카피라이트 (.copy): font-variant (영문 소문자 -> 작은 대문자) */
+p.copy {
+  font-size: 0.875rem; /* 14px (14 / 16) */
+  font-weight: 400;
+  /* 영문 소문자를 작은 크기의 대문자로 변환 (small-caps) */
+  font-variant: small-caps;
+  color: #777;
+}
+
+/* [슬라이드 2 - 하단] 한 줄로 폰트 속성 축약 표현 (font shorthand) */
+/* 작성 순서: font-style | font-weight | font-size / line-height | font-family */
+p.short-example {
+  font:
+    italic 700 16px/25px 'Roboto',
+    sans-serif;
+}

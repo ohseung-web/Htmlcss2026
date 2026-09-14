@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NCS 응용SW 기초기술 활용 문제해결 시나리오 평가</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 15mm;
+      }
+      body {
+        font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f4f6f9;
+      }
+      .container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        text-align: center;
+        border-bottom: 3px double #2c3e50;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+      }
+      .header h1 {
+        font-size: 24px;
+        color: #1a252f;
+        margin-bottom: 5px;
+      }
+      .header p {
+        font-size: 14px;
+        color: #7f8c8d;
+      }
+      .student-info {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #bdc3c7;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+        background-color: #f8f9fa;
+      }
+      .section-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #2980b9;
+        border-left: 5px solid #2980b9;
+        padding-left: 10px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        background-color: #ebf5fb;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .question-card {
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        padding: 20px;
+        margin-bottom: 25px;
+        background-color: #ffffff;
+        page-break-inside: avoid;
+      }
+      .question-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        font-size: 16px;
+        color: #2c3e50;
+        margin-bottom: 12px;
+      }
+      .page-tag {
+        font-size: 12px;
+        background-color: #e8f8f5;
+        color: #16a085;
+        padding: 3px 8px;
+        border-radius: 4px;
+        border: 1px solid #a3e4d7;
+      }
+      .scenario-box {
+        background-color: #f8fafc;
+        border-left: 4px solid #64748b;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: #334155;
+        white-space: pre-line;
+      }
+      .options-list {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 15px;
+      }
+      .options-list li {
+        margin-bottom: 8px;
+        font-size: 14.5px;
+      }
+      .rationale-box {
+        background-color: #fef9e7;
+        border: 1px solid #f9e79f;
+        padding: 10px 15px;
+        border-radius: 4px;
+        font-size: 13.5px;
+        color: #7d6608;
+        margin-top: 10px;
+      }
+      .rationale-title {
+        font-weight: bold;
+        margin-bottom: 3px;
+      }
+      .btn-container {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+      }
+      .btn-print {
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+      .btn-print:hover {
+        background-color: #219150;
+        transform: translateY(-2px);
+      }
+      @media print {
+        body {
+          background-color: #fff;
+          padding: 0;
+        }
+        .container {
+          box-shadow: none;
+          padding: 0;
+        }
+        .btn-container {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn-container">
+      <button class="btn-print" onclick="window.print()">
+        📄 PDF로 다운로드 / 출력
+      </button>
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <h1>NCS 응용SW 기초기술 활용 평가 문제집</h1>
+        <p>능력단위코드: LM2001020232_23v5 | 평가 유형: 문제해결 시나리오형</p>
+      </div>
+
+      <div class="student-info">
+        <span>성명: ____________________</span>
+        <span>생년월일: ____________________</span>
+        <span>점수: ________ / 100점</span>
+      </div>
+
+      <!-- 능력단위 1 -->
+      <div class="section-title">학습 1. 네트워크 기초 활용하기 (5문항)</div>
+
+      <!-- Q1 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 1] 네트워크 프로토콜 3요소 구분</span>
+          <span class="page-tag">NCS 교재 p.3~4 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 신입 개발자 김 SW는 서버와 클라이언트 간에 JSON 규격으로
+          데이터를 주고받는 REST API를 설계하고 있다. 데이터 전송 시 속도 향상을
+          위해 수신측과의 전송 시점(Timing)과 송수신 속도 조절(Flow Control)을
+          고려하고 있다. 프로토콜의 기본 구성 요소 중 하나에 대한 개념을
+          정리하려 할 때, 올바른 설명을 찾고자 한다.
+        </div>
+        <p>
+          <strong
+            >질문: 프로토콜의 주요 3요소 중 하나인 '의미(Semantics)'에 대한
+            올바른 설명은 무엇인가?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① 데이터를 주고받는 전체적인 형식이나 구조를 규정하는 것이다.</li>
+          <li>
+            ② 데이터 내 각 바이트(영역)가 가지는 해석 및 동작 방식을 의미한다.
+          </li>
+          <li>③ 데이터 전송 시점 및 전송 속도를 조절하는 메커니즘이다.</li>
+          <li>
+            ④ 발신지에서 비트 스트림을 생성하기 위한 전기적 신호 규격이다.
+          </li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ②</div>
+          '구문(Syntax)'은 데이터의 구조나 형식을 의미하고, '의미(Semantics)'는
+          구조 안에서 각 부분이 갖는 의미 및 수신자의 동작을 해석하는 것이며,
+          '타이밍(Timing)'은 전송 시점과 속도를 조절하는 특성입니다. (p.3~4)
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 2] OSI 7계층 장비 및 데이터 단위 식별</span>
+          <span class="page-tag">NCS 교재 p.5~6 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 네트워크 엔지니어가 사내 망 환경을 검토하고 있다. 외부에서
+          들어오는 IP 기반의 패킷(Packet)을 분석하여 최적의 경로를 탐색해
+          전달하는 L3 장비를 점검하려 한다.
+        </div>
+        <p>
+          <strong
+            >질문: 네트워크 계층(Network Layer, 3계층)의 데이터 단위(PDU)와 주요
+            네트워크 장비의 조합으로 올바른 것은?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① 세그먼트(Segment) - 로드밸런서</li>
+          <li>② 프레임(Frame) - L2 스위치</li>
+          <li>③ 패킷(Packet) - 라우터(Router)</li>
+          <li>④ 비트(Bit) - 허브(Hub)</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ③</div>
+          3계층(Network Layer)의 PDU는 패킷(Packet)이며 주요 장비는
+          라우터(Router) 및 L3 스위치입니다. 4계층은 세그먼트, 2계층은 프레임,
+          1계층은 비트 단위를 사용합니다. (p.6)
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 3] 전송계층 TCP와 UDP 특징 비교</span>
+          <span class="page-tag">NCS 교재 p.7~8 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 실시간 스트리밍 방송 애플리케이션을 개발 중인 이 대리는
+          데이터 전송 시 약간의 손실이 발생하더라도 지연(Delay)을 최소화하는
+          통신 방식을 선택하고자 한다. 반면, 회원가입 정보와 같은 중요한
+          데이터는 3-way handshake를 통해 신뢰성 있는 연결을 확립한 후 전송해야
+          한다.
+        </div>
+        <p>
+          <strong
+            >질문: UDP(User Datagram Protocol) 프로토콜의 특징으로 올바른
+            것은?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① 신뢰성 있는 통신을 위해 3-way handshake 과정을 거친다.</li>
+          <li>② 헤더 크기가 20바이트로 크고, 오류 시 재전송을 요청한다.</li>
+          <li>③ 수신자의 수신 확인(Acknowledgment) 신호를 필수로 수신한다.</li>
+          <li>
+            ④ 헤더 크기가 8바이트로 작으며, 연결 설정 과정 없이 데이터를 속도
+            위주로 전송한다.
+          </li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ④</div>
+          UDP는 3-way handshake 없이 빠른 전송을 목적으로 하며 헤더는
+          8바이트입니다. TCP는 3-way handshake, 오류제어, 20바이트 헤더를
+          가집니다. (p.8)
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 4] IPv4 주소 및 서브넷 마스크 계산</span>
+          <span class="page-tag">NCS 교재 p.13~14 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 네트워크 관리자는 사내 64.27.10.0 네트워크를 서브넷 마스크
+          프리픽스 표기법 `/26`으로 구성하였다. 이 네트워크 구역에 위치한 웹
+          서버들에 올바른 서브넷 마스크 값을 설정하고자 한다.
+        </div>
+        <p>
+          <strong
+            >질문: 프리픽스 표기법 `/26`에 해당하는 IPv4 십진 표기법 서브넷
+            마스크는 무엇인가?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① 255.255.255.0</li>
+          <li>② 255.255.255.128</li>
+          <li>③ 255.255.255.192</li>
+          <li>④ 255.255.255.224</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ③</div>
+          /26은 32비트 중 상위 26비트가 1임을 의미합니다. 4번째 옥텟이
+          11000000(2)이므로 십진수로 변환하면 128+64 = 192가 되어
+          255.255.255.192가 됩니다. (p.14, p.44)
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 5] MAC 주소 체계 및 구조 이해</span>
+          <span class="page-tag">NCS 교재 p.17~18 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 보안 팀에서 사내 네트워크에 접근한 단말기의 물리적 주소(MAC
+          Address)를 분석하고 있다. 수집된 MAC 주소 `F0-2F-74-B1-FC-E5`에서
+          제조사 식별 코드(OUI) 영역을 파악하려 한다.
+        </div>
+        <p>
+          <strong>질문: MAC 주소에 대한 설명 중 올바르지 않은 것은?</strong>
+        </p>
+        <ul class="options-list">
+          <li>① 총 48비트(6바이트)의 크기를 가지며 16진수로 표현된다.</li>
+          <li>
+            ② 상위 24비트는 제조사 고유 번호인 OUI(Organizationally Unique
+            Identifier)이다.
+          </li>
+          <li>
+            ③ OSI 7계층 중 네트워크 계층(3계층)에서 논리적 주소로 사용된다.
+          </li>
+          <li>④ NIC 제품 출하 시 부여되는 유일한 물리적 주소이다.</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ③</div>
+          MAC 주소는 OSI 7계층 중 데이터링크 계층(2계층)에서 사용되는 물리적
+          주소입니다. 네트워크 계층에서 사용되는 것은 IP 주소(논리 주소)입니다.
+          (p.17~18)
+        </div>
+      </div>
+
+      <!-- 능력단위 2 -->
+      <div class="section-title">학습 2. 미들웨어 기초 활용하기 (5문항)</div>
+
+      <!-- Q6 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 6] 미들웨어(Middleware)의 역할 및 개념</span>
+          <span class="page-tag">NCS 교재 p.50 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 분산 시스템 환경에서 클라이언트 소프트웨어와
+          데이터베이스/응용 서버 간의 원활한 통신을 중재하고, 이종 시스템 간의
+          데이터 표준화를 지원하기 위해 미들웨어를 도입하고자 한다.
+        </div>
+        <p>
+          <strong
+            >질문: 미들웨어(Middleware)의 핵심 역할에 대한 설명으로 가장 올바른
+            것은?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>
+            ① 하드웨어 장치의 인코딩 및 전력 소모를 직접 컨트롤하는 시스템 전원
+            제어 소프트웨어이다.
+          </li>
+          <li>
+            ② 운영체제와 응용프로그램 사이에 위치하여 통신 및 데이터 관리를
+            지원하는 인프라 소프트웨어이다.
+          </li>
+          <li>
+            ③ 웹 브라우저 사용자에게 화면 HTML 레이아웃만 렌더링해 주는
+            프론트엔드 라이브러리이다.
+          </li>
+          <li>
+            ④ 컴퓨터 하드웨어를 새로 부팅할 때 기본 ROM 바이오스(BIOS)를
+            검사하는 프로그램이다.
+          </li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ②</div>
+          미들웨어는 운영체제(OS)와 응용 애플리케이션 사이에서 분산 환경의 통신,
+          데이터 교환, 서비스 연결을 매개하고 지원하는 인프라 소프트웨어입니다.
+          (p.50)
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 7] WAS(Web Application Server)와 WEB 서버 역할 구분</span>
+          <span class="page-tag">NCS 교재 p.52~55 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 웹 시스템 아키텍처를 설계하는 차 대리는 정적 콘텐츠(HTML,
+          이미지 등) 처리는 Nginx 웹 서버에 맡기고, 트랜잭션 처리 및 비즈니스
+          로직 연산이 필요한 동적 콘텐츠는 WAS에 분해하여 배치하고자 한다.
+        </div>
+        <p>
+          <strong
+            >질문: 다음 중 WAS(Web Application Server)의 대표적인 예시로 가장
+            적절한 것은?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① Apache HTTP Server</li>
+          <li>② Nginx</li>
+          <li>③ Apache Tomcat</li>
+          <li>④ Windows IIS (Static Web Router)</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ③</div>
+          Apache Tomcat, JEUS, WildFly 등은 동적 비즈니스 로직과 서블릿
+          컨테이너를 실행하는 대표적인 WAS입니다. 순수 Apache HTTP Server나
+          Nginx는 웹 서버(Web Server)에 가깝습니다. (p.52~55)
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 8] RPC 및 MOM 미들웨어 종류 파악</span>
+          <span class="page-tag">NCS 교재 p.56~58 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 대용량 트래픽이 발생하는 쇼핑몰 시스템에서 주문 처리 서버와
+          결제 완료 알림 서버 간에 직접적인 결합을 피하고, 비동기 메시지
+          큐(Message Queue) 방식으로 통신 장애 발생 시에도 대기열을 유지하도록
+          설계하고자 한다.
+        </div>
+        <p>
+          <strong
+            >질문: 이와 같은 비동기 메시지 기반의 미들웨어(MOM: Message Oriented
+            Middleware) 유형에 해당하는 솔루션은?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① RabbitMQ / Rabbit / Kafka</li>
+          <li>② gRPC</li>
+          <li>③ Oracle OCI C-Driver</li>
+          <li>④ ODBC Driver Manager</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ①</div>
+          RabbitMQ, Apache Kafka, ActiveMQ 등은 비동기 메시지 전달을 지원하는
+          메시지 지향 미들웨어(MOM)의 대표적인 솔루션입니다. (p.56~58)
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 9] DB 커넥션 풀(DBCP) 운용의 목적</span>
+          <span class="page-tag">NCS 교재 p.60~63 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 사용자 요청이 올 때마다 매번 DB 연결(Connection)을 새롭게
+          맺고 닫는 과정에서 과도한 시간과 CPU 자원이 소모되어 웹 서비스 응답
+          속도가 현저히 느려지는 현상이 관찰되었다.
+        </div>
+        <p>
+          <strong
+            >질문: 이를 해결하기 위해 DB 커넥션 풀(DBCP: Database Connection
+            Pool)을 도입할 때의 장점으로 옳지 않은 것은?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① DB 연결 생성/소멸에 따른 오버헤드를 대폭 줄일 수 있다.</li>
+          <li>
+            ② 동시 접속자가 급증해도 일정 수의 커넥션을 재사용하므로 서버 부하를
+            제어할 수 있다.
+          </li>
+          <li>
+            ③ 커넥션 개수를 무제한으로 설정하여 메모리 사용량을 최소화시킨다.
+          </li>
+          <li>
+            ④ 서비스 응답 속도가 개선되어 전체 시스템 처리 성능이 향상된다.
+          </li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ③</div>
+          커넥션 풀에서 커넥션 개수를 무제한으로 늘리면 메모리 고갈 및 DB
+          과부하가 발생하므로, مناسب한 최댓값을 제한하여 운용해야 합니다.
+          (p.60~63)
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 10] MVC 아키텍처 패턴의 구조 이해</span>
+          <span class="page-tag">NCS 교재 p.70~75 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 개발팀은 웹 애플리케이션의 유지보수성을 향상시키기 위해
+          디자인 영역과 비즈니스 로직, 제어 로직을 분리하는 MVC 패턴을
+          적용하기로 하였다.
+        </div>
+        <p>
+          <strong
+            >질문: MVC 패턴에서 사용자의 입력을 받아 모델(Model)을 업데이트하고
+            적절한 뷰(View)를 선택하여 응답을 제어하는 구성 요소는?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① Model</li>
+          <li>② View</li>
+          <li>③ Controller</li>
+          <li>④ Entity</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ③</div>
+          Controller(컨트롤러)는 클라이언트 요청을 수신하여 Model의 데이터
+          변경을 호출하고, 처리 결과를 보여줄 View를 선택하여 연결하는 제어
+          역할을 담당합니다. (p.70~75)
+        </div>
+      </div>
+
+      <!-- 능력단위 3 -->
+      <div class="section-title">
+        학습 3. 데이터베이스 기초 활용하기 (10문항)
+      </div>
+
+      <!-- Q11 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 11] 데이터베이스의 4가지 주요 특징 식별</span>
+          <span class="page-tag">NCS 교재 p.88~90 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 데이터베이스 관리자(DBA)가 데이터베이스의 기본 특성을 사내
+          교육 자료로 작성하고 있다. 데이터베이스는 다수의 사용자가 동시에
+          접근하더라도 데이터의 일관성을 유지해야 한다.
+        </div>
+        <p>
+          <strong
+            >질문: 데이터베이스의 4가지 주요 특징 중 '사용자의 데이터 요구에
+            대해 즉시 처리하여 결과를 응답한다'는 특징을 뜻하는 용어는?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① 실시간 접근성 (Real-Time Accessibility)</li>
+          <li>② 계속적인 변화 (Continuous Evolution)</li>
+          <li>③ 동시 공유 (Concurrent Sharing)</li>
+          <li>④ 내용에 의한 참조 (Content Reference)</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ①</div>
+          쿼리 및 요청에 대하여 수 초 내에 즉각 처리 결과를 응답하는 특성은
+          '실시간 접근성(Real-Time Accessibility)'입니다. (p.88~90)
+        </div>
+      </div>
+
+      <!-- Q12 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 12] 트랜잭션의 ACID 특성 검증</span>
+          <span class="page-tag">NCS 교재 p.92~95 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 계좌 이체 트랜잭션 수행 중 A 계좌에서 10만원이 출금된 직후
+          정전이 발생하여 B 계좌로의 입금이 실패하였다. 이 경우 트랜잭션 특성에
+          의해 A 계좌의 출금 작업도 취소(Rollback)되어야 한다.
+        </div>
+        <p>
+          <strong
+            >질문: 트랜잭션의 작업 단위가 "All or Nothing"으로 처리되어 완전히
+            수행되거나 전혀 수행되지 않아야 함을 뜻하는 ACID 특성은?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① 원자성 (Atomicity)</li>
+          <li>② 일관성 (Consistency)</li>
+          <li>③ 격리성 (Isolation)</li>
+          <li>④ 영속성 (Durability)</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ①</div>
+          트랜잭션 내의 모든 연산이 완전히 완료되거나(Commit) 모두
+          취소(Rollback)되어야 한다는 특성은 '원자성(Atomicity)'입니다.
+          (p.92~95)
+        </div>
+      </div>
+
+      <!-- Q13 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 13] 관계형 데이터베이스 무결성 제약조건</span>
+          <span class="page-tag">NCS 교재 p.100~103 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 테이블 설계 시 기본키(Primary Key)로 지정된 '사원번호'
+          컬럼에는 중복된 값이 입력될 수 없으며, NULL 값 역시 허용되지 않는다.
+        </div>
+        <p>
+          <strong
+            >질문: 기본키(PK) 구성 속성은 NULL 값을 가질 수 없으며 튜플의
+            유일성을 보장해야 한다는 무결성 제약조건은?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① 개체 무결성 (Entity Integrity)</li>
+          <li>② 참조 무결성 (Referential Integrity)</li>
+          <li>③ 도메인 무결성 (Domain Integrity)</li>
+          <li>④ 사용자 정의 무결성 (User-Defined Integrity)</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ①</div>
+          기본키가 NULL을 가질 수 없다는 제약조건은 '개체 무결성(Entity
+          Integrity)'입니다. 외래키 관련 제약조건은 참조 무결성입니다.
+          (p.100~103)
+        </div>
+      </div>
+
+      <!-- Q14 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 14] ERD 관계형 데이터 모델링 이해</span>
+          <span class="page-tag">NCS 교재 p.106~109 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 데이터 모델러가 고객(Customer)과 주문(Order) 엔티티 간의
+          ERD(Entity Relationship Diagram)를 설계하고 있다. 한 명의 고객은 여러
+          건의 주문을 할 수 있으며, 하나의 주문은 반드시 한 명의 고객에 속해야
+          한다.
+        </div>
+        <p>
+          <strong
+            >질문: 이와 같은 고객과 주문 엔티티 간의 관계 수량성(Cardinality)
+            표시로 알맞은 것은?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① 1 : 1 관계</li>
+          <li>② 1 : N 관계</li>
+          <li>③ N : M 관계</li>
+          <li>④ N : 1 관계 (주문 중심 1:1)</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ②</div>
+          고객 1명이 여러 주문(N)을 생성할 수 있으므로, 고객 대 주문의 관계는
+          1:N(일대다) 관계입니다. (p.106~109)
+        </div>
+      </div>
+
+      <!-- Q15 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 15] DDL 명령어(CREATE TABLE) 정의 식별</span>
+          <span class="page-tag">NCS 교재 p.110~115 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 신규 프로젝트를 진행 중인 박 개발자는 회원
+          테이블(`MEMBER`)을 생성하기 위해 데이터 정의어(DDL) 구문을 작성하고
+          있다.
+        </div>
+        <p>
+          <strong
+            >질문: 다음 중 테이블 구조를 생성하기 위한 올바른 SQL DDL
+            명령어는?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① INSERT INTO</li>
+          <li>② CREATE TABLE</li>
+          <li>③ ALTER TABLE</li>
+          <li>④ UPDATE TABLE</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ②</div>
+          새로운 테이블을 정의하는 DDL 명령어는 `CREATE TABLE`입니다. `INSERT`와
+          `UPDATE`는 DML이며, `ALTER`는 기존 구조 수정 명령어입니다. (p.110~115)
+        </div>
+      </div>
+
+      <!-- Q16 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 16] DML 명령어(INSERT) 조작</span>
+          <span class="page-tag">NCS 교재 p.119~121 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] `STUDENT` 테이블(학번: `STD_ID`, 이름: `STD_NAME`)에 학번
+          '2026001', 이름 '홍길동'인 새로운 학생 데이터를 삽입하려 한다.
+        </div>
+        <p>
+          <strong>질문: 올바른 SQL DML 데이터 삽입 구문은 무엇인가?</strong>
+        </p>
+        <ul class="options-list">
+          <li>
+            ① `INSERT INTO STUDENT (STD_ID, STD_NAME) VALUES ('2026001',
+            '홍길동');`
+          </li>
+          <li>② `ADD ROW TO STUDENT VALUES ('2026001', '홍길동');`</li>
+          <li>③ `UPDATE STUDENT SET STD_ID='2026001', STD_NAME='홍길동';`</li>
+          <li>
+            ④ `CREATE ROW IN STUDENT (STD_ID='2026001', STD_NAME='홍길동');`
+          </li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ①</div>
+          테이블에 새로운 레코드를 추가하는 문법은 `INSERT INTO 테이블명
+          (컬럼...) VALUES (값...)` 구문입니다. (p.119~121)
+        </div>
+      </div>
+
+      <!-- Q17 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 17] SELECT 조건 조회 및 WHERE 절 활용</span>
+          <span class="page-tag">NCS 교재 p.122~124 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] `EMP` 테이블에서 급여(`SALARY`)가 3000 이상이고
+          부서번호(`DEPT_ID`)가 10번인 사원의 이름(`EMP_NAME`)을 조회하고자
+          한다.
+        </div>
+        <p><strong>질문: 이에 해당하는 적절한 SQL 구문은 무엇인가?</strong></p>
+        <ul class="options-list">
+          <li>
+            ① `SELECT EMP_NAME FROM EMP WHERE SALARY >= 3000 OR DEPT_ID = 10;`
+          </li>
+          <li>
+            ② `SELECT EMP_NAME FROM EMP WHERE SALARY >= 3000 AND DEPT_ID = 10;`
+          </li>
+          <li>
+            ③ `SELECT EMP_NAME FROM EMP HAVING SALARY >= 3000 AND DEPT_ID = 10;`
+          </li>
+          <li>
+            ④ `SELECT EMP FROM EMP_NAME WHERE SALARY >= 3000 AND DEPT_ID = 10;`
+          </li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ②</div>
+          두 가지 조건(급여 3000 이상 '이고' 부서 10번)을 동시에 만족해야 하므로
+          `AND` 논리 연산자와 `WHERE` 절을 조합한 ②번이 정답입니다. (p.122~124)
+        </div>
+      </div>
+
+      <!-- Q18 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 18] UPDATE 문을 이용한 데이터 수정시 주의사항</span>
+          <span class="page-tag">NCS 교재 p.125~126 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 초보 개발자 최 사원은 `PRODUCT` 테이블에서
+          상품코드(`PROD_CODE`)가 'P100'인 상품의 가격(`PRICE`)을 15000원으로
+          변경하고자 연산을 수행하려 한다.
+        </div>
+        <p>
+          <strong
+            >질문: 실수로 특정 행이 아닌 모든 상품의 가격이 변경되는 대형 사고를
+            예방하기 위해 UPDATE문 사용 시 반드시 명시해야 하는 절은?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① `GROUP BY` 절</li>
+          <li>② `HAVING` 절</li>
+          <li>③ `WHERE` 절</li>
+          <li>④ `ORDER BY` 절</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ③</div>
+          `UPDATE` 구문에 `WHERE` 절을 생략하면 테이블 내의 모든 튜플(행)에 수정
+          연산이 적용되는 심각한 오류가 발생하므로 주의해야 합니다. (p.125~126)
+        </div>
+      </div>
+
+      <!-- Q19 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 19] DELETE 및 DROP의 차이점 식별</span>
+          <span class="page-tag">NCS 교재 p.126~127 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 데이터베이스 점검 중, 테이블의 구조(스키마)는 그대로
+          유지하면서 내부의 데이터 레코드만 삭제하려는 경우와, 테이블 자체를
+          물리적으로 완전히 삭제하려는 경우를 구분하려 한다.
+        </div>
+        <p>
+          <strong
+            >질문: 테이블 내 데이터(행)만 조건에 맞춰 삭제하는 DML 명령어와,
+            테이블 전체 구조 자체를 제거하는 DDL 명령어의 연결이 올바른
+            것은?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>① 행 삭제: `DELETE` / 테이블 구조 삭제: `DROP`</li>
+          <li>② 행 삭제: `DROP` / 테이블 구조 삭제: `DELETE`</li>
+          <li>③ 행 삭제: `TRUNCATE` / 테이블 구조 삭제: `ALTER`</li>
+          <li>④ 행 삭제: `REMOVE` / 테이블 구조 삭제: `ERASE`</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ①</div>
+          데이터 행을 선택하여 삭제하는 것은 DML인 `DELETE`이고, 데이터베이스
+          객체(테이블 구조)를 지우는 DDL은 `DROP`입니다. (p.126~127)
+        </div>
+      </div>
+
+      <!-- Q20 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span>[문항 20] 데이터 조인(JOIN) 및 조작 복합 이해</span>
+          <span class="page-tag">NCS 교재 p.123~127 참조</span>
+        </div>
+        <div class="scenario-box">
+          [시나리오] 사원 테이블(`EMP`)과 부서 테이블(`DEPT`)이 존재할 때,
+          사원들의 사원명과 속한 부서명을 함께 출력하는 쿼리를 작성하고자 한다.
+          두 테이블은 부서코드(`DEPT_CODE`)로 연결되어 있다.
+        </div>
+        <p>
+          <strong
+            >질문: 공통 컬럼인 부서코드를 기준으로 동등 조인(INNER JOIN)을
+            수행하는 올바른 SQL 작성 방식은?</strong
+          >
+        </p>
+        <ul class="options-list">
+          <li>
+            ① `SELECT E.EMP_NAME, D.DEPT_NAME FROM EMP E INNER JOIN DEPT D ON
+            E.DEPT_CODE = D.DEPT_CODE;`
+          </li>
+          <li>
+            ② `SELECT E.EMP_NAME, D.DEPT_NAME FROM EMP E UNION ALL DEPT D;`
+          </li>
+          <li>
+            ③ `SELECT E.EMP_NAME, D.DEPT_NAME FROM EMP E, DEPT D WHERE
+            E.EMP_NAME = D.DEPT_NAME;`
+          </li>
+          <li>④ `SELECT EMP_NAME, DEPT_NAME FROM EMP GROUP BY DEPT;`</li>
+        </ul>
+        <div class="rationale-box">
+          <div class="rationale-title">정답 및 해설: ①</div>
+          두 테이블 간의 연관 컬럼(`DEPT_CODE`) 값이 일치하는 데이터를 결합할
+          때는 `INNER JOIN` 키워드와 `ON` 조건절(또는 WHERE절 동등 조건)을
+          사용합니다. (p.123~127)
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+```eof

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Example_14</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #eee;
+        text-align: center;
+        padding: 30px;
+      }
+
+      .card {
+        display: inline-block;
+        width: 200px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        margin: 10px;
+        overflow: hidden;
+        vertical-align: top;
+      }
+
+      .card img {
+        width: 100%;
+        height: 130px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .card h2 {
+        font-size: 16px;
+        margin: 10px 10px 5px 10px;
+      }
+
+      .card p {
+        font-size: 13px;
+        color: #555;
+        margin: 0 10px 15px 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img src="/images/product1.jpg" alt="product1" />
+      <h2>Wireless Earbuds</h2>
+      <p>This is a long product description text that will be truncated</p>
+    </div>
+
+    <div class="card">
+      <img src="/images/product2.jpg" alt="product2" />
+      <h2>Smart Watch</h2>
+      <p>Track your health and fitness goals easily every single day</p>
+    </div>
+
+    <div class="card">
+      <img src="/images/product3.jpg" alt="product3" />
+      <h2>Bluetooth Speaker</h2>
+      <p>Portable speaker with powerful sound and long battery life</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Example_16</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #f2f2f2;
+        text-align: center;
+        padding: 50px 0;
+      }
+
+      .plan {
+        display: inline-block;
+        width: 220px;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        padding: 30px 20px;
+        margin: 0 15px;
+        vertical-align: top;
+        text-align: center;
+      }
+
+      /* 가운데 추천 플랜 강조 */
+      .plan.featured {
+        background-color: #1e2a4a;
+        color: white;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        transform: scale(1.08);
+      }
+
+      .plan h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .price {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .plan.featured .price {
+        color: #ddd;
+      }
+
+      .price span {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #1e2a4a;
+      }
+
+      .plan.featured .price span {
+        color: #ffffff;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 15px 0;
+      }
+
+      .plan.featured hr {
+        border-top: 1px solid #4a5a7a;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 25px 0;
+        text-align: left;
+      }
+
+      li {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      li::before {
+        /* content: '\2713  '; */
+        content: '✔️  ';
+        color: #2ecc71;
+        font-weight: bold;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px 0;
+        border: none;
+        border-radius: 20px;
+        background-color: #1e2a4a;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #3b4d7a;
+      }
+
+      .plan.featured button {
+        background-color: #ffffff;
+        color: #1e2a4a;
+      }
+
+      .plan.featured button:hover {
+        background-color: #dddddd;
+      }
+      /* [가상 요소(pseudo-element) 선택자] 
+   ::before 는 선택한 요소의 '내용(content) 맨 앞'에
+   가상의 요소를 하나 추가로 삽입해주는 선택자입니다.
+   실제 HTML 태그를 추가하지 않고도 CSS만으로 
+   장식용 요소(아이콘, 기호, 텍스트 등)를 넣을 수 있습니다. */
+
+      /* li::before { */
+      /* content 속성은 ::before, ::after 선택자를 사용할 때 반드시 필요합니다.
+        content에 적은 문자(또는 이미지)가 li 요소 맨 앞에 실제로 출력됩니다.
+        즉, 아래 코드는 각 <li> 앞에 "✓ " 글자를 자동으로 붙여주는 것입니다. */
+      /* content: "✓ "; */
+
+      /* 체크 표시(✓)의 글자 색상을 초록색으로 지정 */
+      /* color: #2ecc71; */
+
+      /* 체크 표시를 굵게 표시 */
+      /* font-weight: bold; */
+      /* } */
+    </style>
+  </head>
+  <body>
+    <div class="plan">
+      <h2>Basic</h2>
+      <p class="price"><span>$9</span> / month</p>
+      <hr />
+      <ul>
+        <li>5 Projects</li>
+        <li>1GB Storage</li>
+        <li>Email Support</li>
+      </ul>
+      <button>Choose Plan</button>
+    </div>
+
+    <div class="plan featured">
+      <h2>Standard</h2>
+      <p class="price"><span>$19</span> / month</p>
+      <hr />
+      <ul>
+        <li>20 Projects</li>
+        <li>10GB Storage</li>
+        <li>Priority Support</li>
+      </ul>
+      <button>Choose Plan</button>
+    </div>
+
+    <div class="plan">
+      <h2>Premium</h2>
+      <p class="price"><span>$39</span> / month</p>
+      <hr />
+      <ul>
+        <li>Unlimited Projects</li>
+        <li>100GB Storage</li>
+        <li>24/7 Phone Support</li>
+      </ul>
+      <button>Choose Plan</button>
+    </div>
+  </body>
+</html>
