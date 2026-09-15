@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: '맑은 고딕', sans-serif;
+}
+
+.site-header {
+  width: 100%;
+  height: 90px;
+  padding: 0 40px;
+  overflow: hidden; /* float로 무너진 부모 높이를 잡아주는 클리어픽스 */
+  border-bottom: 1px solid #eee;
+}
+
+/* 로고 영역 - 왼쪽 정렬 */
+.logo {
+  float: left;
+  line-height: 90px;
+}
+.logo h1 {
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #1f5c3f;
+}
+
+/* 메뉴 영역 - 로고 오른쪽에 나란히 */
+nav {
+  float: left;
+  margin-left: 60px;
+}
+nav ul {
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 18px;
+  line-height: 90px;
+  font-size: 15px;
+  color: #333;
+}
+
+/* 오른쪽 유틸 영역 - 점주님 공간 + 프랜차이즈 버튼 */
+.util {
+  float: right;
+  line-height: 90px;
+}
+.util .owner {
+  display: inline-block;
+  margin-right: 25px;
+  font-size: 13px;
+  color: #666;
+  vertical-align: middle;
+}
+.util .franchise-btn {
+  display: inline-block;
+  background-color: #1f5c3f;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 26px;
+  font-size: 14px;
+  cursor: pointer;
+  vertical-align: middle;
+}

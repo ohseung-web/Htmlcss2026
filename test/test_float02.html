@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float 요소</title>
+    <style>
+      .parent {
+        border: 5px solid red;
+        width: 600px;
+      }
+
+      .top {
+        background-color: purple;
+        height: 50px;
+      }
+
+      .left {
+        background-color: skyblue;
+        height: 100px;
+        width: 200px;
+        float: left;
+      }
+
+      .rigth {
+        background-color: orange;
+        height: 100px;
+        width: 400px;
+        float: right;
+      }
+
+      .clear {
+        /* clear class는 left, right의 float 속성을 상속받아 밑으로 숨어있어 안보이는 상태이다. */
+        background-color: purple;
+        height: 50px;
+        clear: both;
+      }
+      section {
+        border: 5px solid black;
+        /* width: 600px; */
+        text-align: center;
+        /* overflow: hidden; */
+      }
+
+      section article {
+        background-color: gold;
+        width: 200px;
+        height: 100px;
+        /* 
+          float와 overflow를 사용해 article를 가로로 배치  하면,  
+          단 1px도 틀리면 안되기때문에 box-sizing: border-box 지정한다.
+        */
+        border: 1px solid red;
+        box-sizing: border-box;
+        display: inline-block;
+        /* float: left; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="top">float:none</div>
+      <div class="left">float:left</div>
+      <div class="rigth">float:right</div>
+      <div class="clear">float:both</div>
+    </div>
+
+    <hr />
+    <section>
+      <article>article</article>
+      <article>article</article>
+      <article>article</article>
+    </section>
+  </body>
+</html>

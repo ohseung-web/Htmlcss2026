@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인라인 요소 구분</title>
+    <style>
+      body {
+        color: #333;
+      }
+      a {
+        color: #000;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        /* 인라인 요소인 <a>태그를 
+          -> display를 이용 block으로 변경 */
+        display: inline-block;
+        /* block으로 변경되었기 때문에 
+             -> 한 줄에 여러 개 배치 할 수 없다. 
+             그러므로 한 줄에 여러 개도 배치 할 수 있고
+             크기도 일정하게 할 수 있는 inline-block으로 변경한다.*/
+        margin: 5px;
+        text-align: center;
+        width: 200px;
+        border-radius: 5px;
+        padding: 5px;
+      }
+      div {
+        border: 1px solid blue;
+        height: 100px;
+        margin: 50px;
+      }
+      img {
+        border: 1px solid red;
+        margin: 50px;
+        width: 150px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://www.naver.com">네이버</a>
+    <a href="https://www.google.com">구글</a>
+    <a href="https://www.daum.net">다음</a>
+    <hr />
+    <div></div>
+    <div></div>
+    <div></div>
+    <img src="/images/product1.jpg" alt="상품1" />
+    <img src="/images/product2.jpg" alt="상품2" />
+    <img src="/images/product3.jpg" alt="상품3" />
+  </body>
+</html>

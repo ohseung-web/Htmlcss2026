@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float 요소</title>
+    <style>
+      .parent {
+        border: 5px solid red;
+        width: 600px;
+        /* float 자식 요소의 높이 붕괴 현상을 방지하려면 아래 속성이 필요합니다. */
+        /* 부모요소에 height를 주지 않는 이유는
+        자식요소에서 height를 주면 자동으로 커지기 때문이다. */
+        /* height: 200px; */
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .child {
+        background-color: gold;
+        width: 200px;
+        height: 200px;
+        /* float: left는 기본이 아니라
+          float : none임을 주의하자 */
+        /* float: left; */
+        display: inline-block;
+        /* margin 0 auto는 블록요소만 지정됨을 주의하자 */
+        /* display: block; */
+        /* margin: 0 auto; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <span class="child"></span>
+    </div>
+  </body>
+</html>

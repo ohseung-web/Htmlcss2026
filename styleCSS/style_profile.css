@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: '맑은 고딕', sans-serif;
+}
+/* 프로필 헤더 전체 - float 클리어픽스 */
+.profile-header {
+  width: 660px;
+  margin: 40px auto;
+  padding: 20px;
+  overflow: hidden;
+}
+/* 원형 프로필 이미지 */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  float: left;
+  text-align: center;
+  line-height: 150px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #888;
+}
+
+/* 오른쪽 프로필 정보 영역 */
+.profile-info {
+  float: left;
+  margin-left: 40px;
+  width: 380px;
+}
+/* 아이디 + 팔로우 버튼 한 줄 배치 */
+.top-row {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.username {
+  display: inline-block;
+  font-size: 22px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+.follow-btn {
+  display: inline-block;
+  background-color: #0095f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 22px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* 게시물 / 팔로워 / 팔로잉 통계 */
+.stats {
+  list-style: none;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.stats li {
+  display: inline-block;
+  margin-right: 34px;
+  font-size: 14px;
+  color: #333;
+}
+.stats li strong {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 2px;
+}
+/* 소개글 */
+.bio {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
