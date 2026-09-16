@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position</title>
+    <style>
+      .parent {
+        position: relative;
+        width: 500px;
+        /* absolute 자식 요소는 붕 떠있으므로 부모에 
+           height를 지정해야 높이를 잃지 않습니다. */
+        height: 500px;
+        border: 1px solid black;
+      }
+
+      .child {
+        position: absolute;
+        background-color: dodgerblue;
+        width: 100px;
+        height: 100px;
+
+        /* 1번: 좌측 상단 배치 */
+        left: 0;
+        top: 0;
+
+        /* 2번: 좌측 하단 배치 (원하는 위치 설정 시 주석 해제) */
+        /*
+        left: 0;
+        bottom: 0;
+        */
+
+        /* 3번: 우측 하단 배치 (원하는 위치 설정 시 주석 해제) */
+        /*
+        right: 0;
+        bottom: 0;
+        */
+
+        /* 4번: 우측 상단 배치 (원하는 위치 설정 시 주석 해제) */
+        /*
+        right: 0;
+        top: 0;
+        */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>

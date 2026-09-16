@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice_06</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Malgun Gothic', sans-serif;
+        background: #fff;
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        max-width: 380px;
+        padding: 20px;
+      }
+
+      .item {
+        display: flex;
+        gap: 12px;
+      }
+
+      /* 이미지를 감싸는 박스 : 배지를 올리기 위한 기준(relative) */
+      .thumb {
+        position: relative;
+        width: 96px;
+        height: 96px;
+        border-radius: 10px;
+        overflow: hidden; /* 모서리 둥글게 자르기 */
+      }
+
+      /* img 태그는 부모 박스(.thumb)에 꽉 채우기 */
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 비율 유지하며 박스 꽉 채움 */
+        display: block;
+      }
+
+      /* 배지는 이미지 위에 절대 위치로 겹치기 */
+      .badge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        font-size: 10.5px;
+        font-weight: 700;
+        color: #fff;
+        padding: 4px 7px;
+        border-radius: 0 0 8px 0;
+      }
+      .badge.time {
+        background: #e53935;
+      }
+      .badge.member {
+        background: #6c4bd6;
+      }
+
+      .info {
+        flex: 1;
+        font-size: 13px;
+      }
+      .name {
+        margin: 0 0 6px;
+        font-weight: 600;
+        font-size: 13.5px;
+      }
+
+      .price-line {
+        margin-bottom: 4px;
+      }
+      .orig {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 12px;
+        margin-right: 6px;
+      }
+      .percent {
+        color: #ff3b30;
+        font-weight: 800;
+        font-size: 14px;
+        margin-right: 4px;
+      }
+      .price {
+        font-weight: 800;
+        font-size: 16px;
+      }
+
+      .rating {
+        color: #999;
+        font-size: 11.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="list">
+      <div class="item">
+        <div class="thumb">
+          <img
+            src="https://picsum.photos/id/292/200/200"
+            alt="한입 그릴감이 좋다 바르닭"
+          />
+          <span class="badge time">06:53:30 남음</span>
+        </div>
+        <div class="info">
+          <p class="name">한입 그릴감이 좋다 바르닭 한입 닭가슴…</p>
+          <div class="price-line">
+            <span class="orig">4,400원</span>
+            <span class="percent">56%</span>
+            <span class="price">1,900원</span>
+          </div>
+          <span class="rating">★4.82 · 리뷰 117</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="thumb">
+          <img
+            src="https://picsum.photos/id/431/200/200"
+            alt="이연복의 목란 짜장면"
+          />
+          <span class="badge member">멤버십 전용</span>
+        </div>
+        <div class="info">
+          <p class="name">[이연복의 목란] 신상 짜장면 2종</p>
+          <div class="price-line">
+            <span class="orig">11,900원</span>
+            <span class="percent">16%</span>
+            <span class="price">9,980원~</span>
+          </div>
+          <span class="rating">★5.0 · 리뷰 1</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="thumb">
+          <img
+            src="https://picsum.photos/id/1080/200/200"
+            alt="오설록 그린티 랑드샤"
+          />
+          <span class="badge member">멤버십 전용</span>
+        </div>
+        <div class="info">
+          <p class="name">[오설록] 그린티 랑드샤 (10g X 10개)</p>
+          <div class="price-line">
+            <span class="orig">14,000원</span>
+            <span class="percent">25%</span>
+            <span class="price">10,500원</span>
+          </div>
+          <span class="rating">★4.85 · 리뷰 447</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

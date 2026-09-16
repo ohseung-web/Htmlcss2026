@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>postion</title>
+    <style>
+      .parent div {
+        width: 200px;
+        height: 300px;
+        float: left;
+        margin: 10px;
+      }
+
+      .child {
+        background-color: lightblue;
+        /* display: none; -> 공간의 크기도 
+        없어지면서 화면상 안 보이고 실제로도 존재하지 않음. */
+        /* display: none; */
+      }
+
+      .child2 {
+        background-color: gold;
+        /* opacity: 0; */
+        /* 공간의 크기는 유지하면서 화면상 안보이지만 
+        실제로는 존재한다 */
+      }
+
+      .child3 {
+        background-color: lightgray;
+        visibility: hidden;
+        /* 공간의 크기는 유지하면서 화면상 안보이면서 
+        실제로는 존재하지 않는다. */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+      <div class="child2"></div>
+      <div class="child3"></div>
+    </div>
+  </body>
+</html>

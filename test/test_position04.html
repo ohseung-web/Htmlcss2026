@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position</title>
+    <style>
+      .parent {
+        position: relative;
+        /* 
+           부모에 position: relative를 지정하지 않으면,
+           .child의 absolute 기준점이 부모(.parent)가 
+           아닌 전체 화면(body/뷰포트)이 됩니다.
+        */
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+      }
+
+      .child {
+        background-color: dodgerblue;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+
+        /* 
+           상위 요소 중 position: relative인 요소가 없으므로 
+           브라우저 화면(뷰포트) 전체를 기준으로 정중앙에 위치하게 됩니다.
+        */
+        top: 50%; /* 화면 위쪽에서 50% 지점으로 이동 */
+        left: 50%; /* 화면 왼쪽에서 50% 지점으로 이동 */
+
+        /* translate => 이동한다는 의미 */
+        /* translate(X축 이동량, Y축 이동량) */
+        /* transform: translate(-50%, -50%)는 X축(가로)과 Y축(세로) 
+           방향으로 각각 자기 자신 크기의 -50%만큼 이동하라는 의미입니다. */
+        transform: translate(-50%, -50%);
+        /* 
+           top/left 50%만 주면 요소의 '좌측 상단 모서리'가 화면 중앙에 오기 때문에,
+           자신의 크기(너비/높이)의 절반만큼(-50%) 다시 반대쪽으로 이동시켜 
+           요소의 '진짜 정중앙'을 화면 가운데에 맞춰줍니다.
+        */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>

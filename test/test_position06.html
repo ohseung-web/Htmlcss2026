@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position</title>
+    <style>
+      /* 기준점이 되는 부모 요소 (빨간 테두리) */
+      .parent {
+        position: relative;
+        border: 5px solid red;
+        width: 600px;
+        height: 300px;
+        margin: 50px auto; /* 중앙 정렬 및 여백 확보 */
+      }
+
+      /* 공통 자식 요소 스타일 */
+      .box {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* ----------------------------------
+         1. 부모 내부 배치 (주황색 박스)
+      ---------------------------------- */
+      .inner-top-left {
+        background-color: orange;
+        top: 0;
+        left: 0;
+      }
+
+      .inner-top-right {
+        background-color: orange;
+        top: 0;
+        right: 0;
+      }
+
+      .inner-bottom-right {
+        background-color: orange;
+        bottom: 0;
+        right: 0;
+      }
+
+      /* ----------------------------------
+         2. 부모 외부 배치 (파란색 / 네이비 박스)
+      ---------------------------------- */
+      /* 1번: 좌측 하단 외부 (top: 100% == top: 300px) */
+      .child1 {
+        background-color: #5b9bd5; /* 파란색 */
+        top: 100%;
+        left: 0;
+        font-size: 24px;
+      }
+
+      /* 2번: 우측 상단 외부 (left: 100% == left: 600px) */
+      .child2 {
+        background-color: #5b9bd5;
+        top: 0;
+        left: 100%;
+        font-size: 24px;
+      }
+
+      /* 3번: 우측 하단 외부 (top: 100%, left: 100%) */
+      .child3 {
+        background-color: #5b9bd5;
+        top: 100%;
+        left: 100%;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <!-- 부모 내부 요소들 (주황색) -->
+      <div class="box inner-top-left">top: 0;<br />left: 0;</div>
+      <div class="box inner-top-right">top: 0;<br />right: 0;</div>
+      <div class="box inner-bottom-right">bottom: 0;<br />right: 0;</div>
+
+      <!-- 부모 외부 걸침 요소들 (파란색 / 1, 2, 3번) -->
+      <div class="box child1">1</div>
+      <div class="box child2">2</div>
+      <div class="box child3">3</div>
+    </div>
+  </body>
+</html>

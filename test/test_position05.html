@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>postion</title>
+    <style>
+      .parent {
+        position: relative;
+        border: 5px solid red;
+        width: 600px;
+        height: 300px;
+      }
+
+      /* 1번 요소 (좌측 하단 외부) */
+      .child {
+        position: absolute;
+        background-color: navy;
+        width: 100px;
+        height: 100px;
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        line-height: 100px;
+
+        /* 1번 위치 설정 */
+        left: 0;
+        top: 100%; /* 부모 높이(300px)만큼 내려가서 부모 바로 아래에 걸침 */
+      }
+
+      /* 2번 요소 (우측 상단 외부) */
+      .child2 {
+        position: absolute;
+        background-color: navy;
+        width: 100px;
+        height: 100px;
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        line-height: 100px;
+
+        /* 2번 위치 설정 */
+        top: 0;
+        left: 100%; /* 부모 너비(600px)만큼 오른쪽으로 이동해서 부모 오른쪽에 걸침 */
+      }
+
+      /* 3번 요소 (우측 하단 외부) */
+      .child3 {
+        position: absolute;
+        background-color: navy;
+        width: 100px;
+        height: 100px;
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        line-height: 100px;
+
+        /* 3번 위치 설정 */
+        left: 100%;
+        top: 100%; /* 부모의 너비와 높이 100% 지점(우측 하단 꼭짓점 외부)에 위치 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child">1</div>
+      <div class="child2">2</div>
+      <div class="child3">3</div>
+    </div>
+  </body>
+</html>
