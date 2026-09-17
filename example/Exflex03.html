@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exflex03</title>
+    <style>
+      /* 기본 여백 제거 및 전체 화면 높이 설정 */
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+      }
+
+      /* 조건 3: body에 display: flex를 지정하여 정중앙 배치 */
+      body {
+        display: flex;
+        justify-content: center; /* 가로 가운데 정렬 */
+        align-items: center; /* 세로 가운데 정렬 */
+        background-color: #f2f2f2;
+      }
+
+      /* 로그인 박스 스타일 */
+      .login-box {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+      }
+
+      .login-box h2 {
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-size: 24px;
+        color: #000;
+      }
+
+      /* input 요소 스타일 (세로 배치 및 너비 100%) */
+      .login-box input {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        box-sizing: border-box; /* 패딩 포함 너비 계산 */
+        font-size: 14px;
+      }
+
+      /* 버튼 스타일 */
+      .login-box button {
+        width: 100%;
+        padding: 12px;
+        background-color: #ff5e43; /* 주황색 버튼 */
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <h2>Login</h2>
+      <input type="text" placeholder="아이디 입력" />
+      <input type="password" placeholder="비밀번호 입력" />
+      <button>로그인</button>
+    </div>
+  </body>
+</html>

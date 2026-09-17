@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exflex_product</title>
+    <style>
+      /* 기본 여백 초기화 및 박스 사이즈 설정 */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        padding: 40px;
+        background-color: #ffffff;
+      }
+
+      /* 조건 3: flex 속성을 이용한 상품 리스트 레이아웃 */
+      .product-container {
+        display: flex;
+        gap: 20px; /* 상품 카드 사이 간격 */
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* 각 상품 카드 */
+      .product-card {
+        flex: 1; /* 4개 카드가 동일한 비율로 영역을 분할 */
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* 이미지 영역 */
+      .product-image {
+        width: 100%;
+        height: 250px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 12px;
+        background-color: #f5f5f5;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 이미지 비율 유지하며 카드 크기에 맞춤 */
+      }
+
+      /* 상품명 (제목) */
+      .product-title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+        line-height: 1.4;
+        margin-bottom: 4px;
+      }
+
+      /* 상품 설명 (소제목) */
+      .product-desc {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 8px;
+      }
+
+      /* 정가 (취소선) */
+      .original-price {
+        font-size: 13px;
+        color: #999;
+        text-decoration: line-through;
+        margin-bottom: 4px;
+      }
+
+      /* 할인율 및 판매가 영역 */
+      .price-info {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* 할인율 */
+      .discount {
+        font-size: 16px;
+        font-weight: bold;
+        color: #e63946;
+      }
+
+      /* 최종 판매가 */
+      .current-price {
+        font-size: 16px;
+        font-weight: bold;
+        color: #111;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 상품 목록 컨테이너 -->
+    <div class="product-container">
+      <!-- 상품 1 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="/images/sale01.jpg" alt="상품 이미지 1" />
+        </div>
+        <div class="product-title">++1등급 마장동 명품 투뿔 한우 선물 세트</div>
+        <div class="product-desc">소고기 구이용 설 명절</div>
+        <div class="original-price">54,500원</div>
+        <div class="price-info">
+          <span class="discount">18%</span>
+          <span class="current-price">44,300원</span>
+        </div>
+      </div>
+
+      <!-- 상품 2 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="/images/sale02.jpg" alt="상품 이미지 2" />
+        </div>
+        <div class="product-title">++1등급 마장동 명품 투뿔 한우 선물 세트</div>
+        <div class="product-desc">소고기 구이용 설 명절</div>
+        <div class="original-price">54,500원</div>
+        <div class="price-info">
+          <span class="discount">18%</span>
+          <span class="current-price">44,300원</span>
+        </div>
+      </div>
+
+      <!-- 상품 3 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="/images/sale03.jpg" alt="상품 이미지 3" />
+        </div>
+        <div class="product-title">++1등급 마장동 명품 투뿔 한우 선물 세트</div>
+        <div class="product-desc">소고기 구이용 설 명절</div>
+        <div class="original-price">54,500원</div>
+        <div class="price-info">
+          <span class="discount">18%</span>
+          <span class="current-price">44,300원</span>
+        </div>
+      </div>
+
+      <!-- 상품 4 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="/images/sale04.jpg" alt="상품 이미지 4" />
+        </div>
+        <div class="product-title">++1등급 마장동 명품 투뿔 한우 선물 세트</div>
+        <div class="product-desc">소고기 구이용 설 명절</div>
+        <div class="original-price">54,500원</div>
+        <div class="price-info">
+          <span class="discount">18%</span>
+          <span class="current-price">44,300원</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

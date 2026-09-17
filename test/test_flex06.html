@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Items 속성 연습</title>
+    <style>
+      .container {
+        display: flex;
+        width: 600px;
+        height: 200px;
+        border: 3px solid #333;
+        background-color: #f4f4f4;
+        margin: 20px auto;
+      }
+
+      .box {
+        background-color: coral;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+        line-height: 100px; /* 기본 높이 100px일 때 텍스트 세로 중앙 정렬 */
+      }
+
+      /* 1번 박스: order (음수 값으로 가장 앞으로 이동) */
+      .box1 {
+        flex-basis: 100px;
+        height: 100px;
+        background-color: #e74c3c;
+        order: -1; /* 기본값 0보다 작으므로 HTML 순서와 상관없이 맨 앞으로 감 */
+      }
+
+      /* 2번 박스: flex-grow (남은 공간을 2 비율만큼 더 차지함) */
+      .box2 {
+        flex-basis: 100px;
+        flex-grow: 2; /* 3번 박스(grow: 1)보다 남은 여백을 2배 더 가짐 */
+        height: 100px;
+        background-color: #3498db;
+      }
+
+      /* 3번 박스: flex-grow (남은 공간을 1 비율만큼 차지함) */
+      .box3 {
+        flex-basis: 100px;
+        flex-grow: 1;
+        height: 100px;
+        background-color: #2ecc71;
+      }
+
+      /* 4번 박스: align-self (부모 정렬을 무시하고 혼자 맨 아래 정렬) */
+      .box4 {
+        flex-basis: 100px;
+        height: 100px;
+        background-color: #9b59b6;
+        align-self: flex-end; /* 혼자서 교차 축 끝(아래)으로 이동 */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HTML 순서는 1 -> 2 -> 3 -> 4 입니다 -->
+    <div class="container">
+      <div class="box box1">Box 1 (order:-1)</div>
+      <div class="box box2">Box 2 (grow:2)</div>
+      <div class="box box3">Box 3 (grow:1)</div>
+      <div class="box box4">Box 4 (self:end)</div>
+    </div>
+  </body>
+</html>

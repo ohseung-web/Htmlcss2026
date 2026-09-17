@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exflex04</title>
+    <style>
+      /* 화면 전체 높이 및 배경 설정 */
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+      }
+
+      /* 화면 정중앙 배치 */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f2f2f2;
+      }
+
+      /* 회원가입 폼 흰색 카드의 레이아웃 */
+      .signup-box {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+      }
+
+      /* 각 입력 행(라벨 + 입력창)을 Flex로 가로 정렬 */
+      .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      /* 라벨 넓이 고정 및 좌측 정렬 */
+      .form-group label {
+        width: 110px;
+        font-weight: bold;
+        color: #333;
+        font-size: 14px;
+      }
+
+      /* 입력창이 나머지 공간을 모두 채우도록 설정 */
+      .form-group input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+        outline: none;
+      }
+
+      /* 회원가입 버튼 스타일 */
+      .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #4cae4c; /* 초록색 버튼 */
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="signup-box">
+      <!-- form 태그 추가 -->
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="name">이름</label>
+          <input type="text" id="name" name="name" placeholder="홍길동" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">이메일</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@gmail.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">비밀번호</label>
+          <input type="password" id="password" name="password" />
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">비밀번호 확인</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+          />
+        </div>
+
+        <!-- 제출용 버튼으로 설정 -->
+        <button type="submit" class="submit-btn">회원가입</button>
+      </form>
+    </div>
+  </body>
+</html>

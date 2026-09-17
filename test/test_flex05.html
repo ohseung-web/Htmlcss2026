@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex 연습</title>
+    <style>
+      .container {
+        /* display: inline-flex; */
+        display: flex;
+        width: 700px;
+        border: 2px solid green;
+        margin: 0 auto;
+        height: 300px;
+        align-items: flex-end;
+      }
+      .container .box {
+        width: 100px;
+        height: 100px;
+        /* border: 1px solid red; */
+        background-color: crimson;
+        border-radius: 5px;
+        margin: 5px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        align-items: "각 줄 안에서 박스들의 세로 위치를 어디에 둘 것인가?"
+
+        align-content: "여러 줄로 나뉜 줄 덩어리 전체를 위/아래 어디로 몰아둘 것인가?"
+    -->
+    <div class="container">
+      <div class="box">box1</div>
+      <div class="box">box2</div>
+      <div class="box">box3</div>
+      <div class="box">box4</div>
+    </div>
+
+    <br />
+  </body>
+</html>

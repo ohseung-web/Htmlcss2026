@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex 연습</title>
+    <style>
+      .container {
+        /* display: inline-flex; */
+        display: flex;
+        width: 700px;
+        justify-content: space-evenly;
+        border: 2px solid green;
+        margin: 0 auto;
+      }
+      .container .box {
+        width: 100px;
+        height: 100px;
+        /* border: 1px solid red; */
+        background-color: crimson;
+        border-radius: 5px;
+        margin: 5px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      justify-content
+      - flex-start	Items를 시작점(flex-start)으로 정렬	flex-start
+      - flex-end	Items를 끝점(flex-end)으로 정렬	
+      - center	Items를 가운데 정렬	
+      - space-between	시작 Items은 시작점에, 마지막 Item은 끝점에 정렬되고, 
+                      나머지 Items는 사이에 고르게 정렬 됨	
+      - space-around	Items를 균등한 여백을 포함하여 정렬
+      - space-evenly;는 Flex 주 축(main-axis)을 따라 모든 여백을 완전히 
+                       동일한 크기로 배분하여 정렬하는 속성 값
+    -->
+    <div class="container">
+      <div class="box">box1</div>
+      <div class="box">box2</div>
+      <div class="box">box3</div>
+      <div class="box">box4</div>
+      <div class="box">box5</div>
+      <div class="box">box6</div>
+    </div>
+
+    <br />
+  </body>
+</html>
