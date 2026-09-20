@@ -1,0 +1,148 @@
+@charset "utf-8";
+/*  기본 초기화 */
+* {
+  /* margin: 0;
+  padding: 0;
+  box-sizing: border-box; */
+}
+ul {
+  /* list-style: none; */
+}
+a {
+  /* text-decoration: none; */
+  /* color: inherit; */
+}
+button {
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+/* body 공통 */
+body {
+  background-color: #fffdf3;
+  color: #222;
+  font-family: sans-serif;
+}
+/* 로그인 폼-------- */
+.login-box {
+  margin: 100px auto;
+  width: 460px;
+  background-color: #fff;
+  padding: 40px 22px 26px;
+  border: 1px solid #222;
+  border-radius: 10px;
+}
+.login-box .logo {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #14563a;
+}
+/* 입력 폼 */
+input[type='email'],
+input[type='password'] {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  border: 1px solid #e6e6e6;
+}
+input::placeholder {
+  color: #c9c9d0;
+}
+input:focus {
+  outline: none;
+  border-color: #14563a;
+}
+.login-box .btn-login {
+  width: 100%;
+  height: 52px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background-color: #14563a;
+  font-size: 16px;
+  font-weight: bold;
+  color: #eee;
+}
+/* 로그인상태 유지 / 비밀번호 찾기 CSS */
+.login-box .login-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0 24px;
+  font-size: 14px;
+  color: #555;
+}
+/* sns 간편 로그인--------- */
+.login-box .sns-login {
+  padding: 22px 20px 24px;
+  margin-bottom: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+}
+.login-box .sns-login h2 {
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+.login-box .sns-login ul {
+  display: flex;
+  justify-content: space-between;
+}
+.login-box .sns-login a {
+  /* a태그는 인라인이라-너비x, 높이x 
+     display:flex로 변경하고
+     가로의 가운데, 세로의 가운데정렬함
+  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  /* text-align은 글자와 인라인 요소를 가운데 정렬하는 속성이고, 
+  부모(컨테이너)에 줘야 한다. 
+  img 자신에게 주면 아무 효과가 없어요. 
+  가운데 정렬하려면 a에 줘야 한다. */
+  /* text-align: center; */
+  /* line-height: 58px; */
+}
+.login-box .sns-login a img {
+  width: 40px;
+  height: 40px;
+}
+.login-box .sns-login .naver {
+  background: #1ec800;
+}
+.login-box .sns-login .kakao {
+  background: #fee500;
+}
+.login-box .sns-login .facebook {
+  background: #1877f2;
+}
+.login-box .sns-login .google {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.login-box .sns-login .apple {
+  background: #000;
+}
+/* 회원가입 CSS------------*/
+.login-box .btn-join {
+  display: block;
+  height: 50px;
+  border: 1px solid #222;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 50px;
+}
+.login-box .join-msg {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+}

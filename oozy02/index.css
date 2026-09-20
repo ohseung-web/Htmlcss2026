@@ -1,18 +1,18 @@
 @charset "utf-8";
 /*  기본 초기화 */
 * {
-  margin: 0;
+  /* margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; */
 }
 ul {
-  list-style: none;
+  /* list-style: none; */
 }
 a {
-  text-decoration: none;
+  /* text-decoration: none; */
   /* inherit는 바로 위 부모 요소의 값을 가져옵니다. 
   body가 아니라 a를 감싸고 있는 부모(li, p, div 등)의 color예요. */
-  color: inherit;
+  /* color: inherit; */
   /* color: black; */
 }
 /* body 공통 css */
