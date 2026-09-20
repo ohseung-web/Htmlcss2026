@@ -1,0 +1,174 @@
+@charset "utf-8";
+/* =========================================================
+   OOZY COFFEE - 로그인 페이지 (복습용)
+   - 로그인 박스 너비 고정: 460px
+   ========================================================= */
+
+/* ---------- 초기화 ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  display: block;
+}
+button {
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* ---------- 공통 ---------- */
+body {
+  background: #fffdf3;
+  color: #222;
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+
+/* ---------- 로그인 박스 ---------- */
+main {
+  display: flex;
+  justify-content: center; /* 가로 가운데 */
+  padding: 50px 0;
+}
+.login-box {
+  width: 460px;
+  padding: 40px 22px 26px;
+  border: 1px solid #222;
+  background: #fff;
+}
+.logo {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #14563a;
+}
+
+/* ---------- 입력폼 ---------- */
+input[type='email'],
+input[type='password'] {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  font-size: 15px;
+}
+input::placeholder {
+  color: #c9c9d0;
+}
+input:focus {
+  outline: none;
+  border-color: #ffd400;
+}
+
+.btn-login {
+  display: block;
+  width: 100%;
+  height: 52px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background: #14563a;
+  font-size: 16px;
+  font-weight: bold;
+  color: #eee;
+}
+
+/* 로그인 상태 유지 / 아이디·비밀번호 찾기 */
+.login-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0 24px;
+  font-size: 14px;
+  color: #555;
+}
+.keep {
+  display: flex;
+  align-items: center;
+}
+.keep input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* ---------- SNS 간편 로그인 ---------- */
+.sns-login {
+  padding: 22px 20px 24px;
+  margin-bottom: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+}
+.sns-login h2 {
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+.sns-login ul {
+  display: flex;
+  justify-content: space-between;
+}
+.sns-login a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+}
+.sns-login img {
+  width: 28px;
+  height: 28px;
+}
+.naver {
+  background: #1ec800;
+}
+.kakao {
+  background: #fee500;
+}
+.facebook {
+  background: #1877f2;
+}
+.google {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.apple {
+  background: #000;
+}
+
+/* ---------- 회원가입 ---------- */
+.btn-join {
+  display: block;
+  height: 50px;
+  line-height: 48px; /* border 2px 만큼 빼서 세로 가운데 */
+  border: 1px solid #222;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+.join-msg {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+}

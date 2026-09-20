@@ -1,0 +1,227 @@
+@charset "utf-8";
+/*  기본 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  /* inherit는 바로 위 부모 요소의 값을 가져옵니다. 
+  body가 아니라 a를 감싸고 있는 부모(li, p, div 등)의 color예요. */
+  color: inherit;
+  /* color: black; */
+}
+/* body 공통 css */
+body {
+  /* 화면이 줄어들어도 레이아웃이 깨지지 않게 최소whidth 지정 */
+  min-width: 1200px;
+  background-color: #fffdf3;
+  color: #222;
+  font-family: sans-serif;
+}
+/* header, footer 공통 */
+.inner {
+  width: 1200px; /* 전체 너비 고정 */
+  margin: 0 auto;
+  /* border: 1px solid red; */
+}
+/* header 헤더 CSS */
+#header {
+  height: 58px;
+  background-color: #fff;
+  border-bottom: 1px solid #222;
+}
+#header .inner {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .inner .logo {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #14563a;
+}
+/* 메인메뉴 */
+#header .inner .gnb ul {
+  display: flex;
+}
+#header .inner .gnb ul li a {
+  padding: 0 21px;
+  font-size: 12px;
+  color: #555;
+  /* border: 1px solid blue; */
+}
+#header .inner .gnb ul li.on a {
+  font-weight: bold;
+  color: #000;
+}
+/* header 우측 영역 */
+#header .inner .header-right {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid green; */
+}
+#header .inner .header-right .owner {
+  margin-right: 22px;
+  font-size: 11px;
+  color: #666;
+}
+#header .inner .header-right .btn-franchise {
+  border-radius: 20px;
+  padding: 9px 16px;
+  background-color: #14563a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* 메뉴 탭 CSS -----------------------*/
+.menu-tab {
+  width: 960px;
+  margin: 24px auto;
+  background-color: #f1eee5;
+}
+.menu-tab ul {
+  display: flex;
+  /* justify-content: space-evenly; */
+  /* align-items: center; */
+}
+.menu-tab ul li {
+  width: 120px;
+}
+.menu-tab ul li a {
+  /* flex가 적용되는 대상이 a가 아니라 li이기 때문이에요.
+     display: flex를 준 요소의 **바로 아래 자식(플렉스 아이템)**은 
+     원래 인라인이어도 블록처럼 바뀌어서 너비와 높이를 가질 수 있어요. 
+     그런데 이 효과는 직계 자식에게만 적용되고, 손자 요소까지는 내려가지 않습니다. */
+  display: block;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 12px;
+  color: #333;
+  /* border: 1px solid red; */
+}
+.menu-tab ul li.on a {
+  background-color: #2f4f3e;
+  color: #ffff;
+}
+/* footer CSS --------------------- */
+#footer {
+  /* padding: 위 좌/우 아래 */
+  padding: 34px 0 44px;
+  background-color: #22352a;
+  color: #fff;
+}
+#footer .inner {
+  display: flex;
+  justify-content: space-evenly;
+}
+#footer .inner .company {
+  width: 480px;
+  margin-right: 10px;
+}
+#footer .inner .company h2 {
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #ddd;
+}
+#footer .inner .company p {
+  font-size: 10px;
+  /* rem도 em도 아니고 단위가 없는 숫자입니다.
+   단위 없는 line-height 값은 해당 요소 자신의 font-size에 
+   곱하는 배수라는 뜻이에요. */
+  /* 그래서 이 p 태그의 한 줄 높이는 19px이 됩니다. */
+  line-height: 1.9; /* 10px × 1.9 = 19px */
+}
+#footer .inner .company .copyright {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #4a5a50;
+  color: #ccc;
+}
+#footer .inner .ploicy {
+  width: 220px;
+}
+#footer .inner .policy li {
+  margin-bottom: 6px;
+  font-size: 10px;
+  font-weight: bold;
+}
+#footer .inner .sns {
+  display: flex;
+}
+#footer .inner .sns li {
+  margin-right: 14px;
+}
+#footer .inner .sns img {
+  width: 18px;
+  height: 18px;
+}
+/* section css ------------------- */
+.menu-list {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 70px 0 40px;
+  /* border: 1px solid red; */
+  /* 위의 border 지정하면 가로로 5개배치가 안되는 이유는
+     width 사이즈가 1200px이 넘어가기때문이다.
+  */
+}
+.menu-list ul {
+  display: flex;
+  /* 5개가 차면 다음 줄로 이동 */
+  flex-wrap: wrap;
+}
+.menu-list ul li {
+  /* season out 배지의 기준부모 */
+  position: relative;
+  width: 240px; /* 1200px / 5 */
+  padding: 0 18px;
+  margin-bottom: 70pb;
+  text-align: center;
+  /* border: 1px solid red; */
+}
+.menu-list ul li img {
+  height: 210px;
+  margin: 0 auto 14px;
+  /* 위: 0. 위쪽 여백은 없습니다.
+     좌우: auto. 왼쪽과 오른쪽 남는 공간을 똑같이 나눠 가져서 
+          이미지가 가로 가운데에 놓입니다.
+     아래: 14px. 이미지와 그 아래 메뉴 이름(h3) 사이를 띄운다. */
+}
+.menu-list ul li h3 {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.menu-list ul li p {
+  font-size: 11px;
+  line-height: 1.6; /* 11 * 1.6 = 17.6px */
+  color: #888;
+}
+/* season out 배지 CSS -------------- */
+.menu-list ul li .season-out {
+  position: absolute;
+  top: -8px;
+  right: 22px;
+  border: 1px solid #2f4f3e;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 10px;
+  text-align: center;
+  text-wrap: wrap;
+  line-height: 12px; /* 두줄이니까 56 / 2 =28px    */
+  padding-top: 15px;
+  color: #14563a;
+  background: #fffdf3;
+}
